@@ -7,13 +7,27 @@ const submarkeetsPath = path.join(__dirname, '../data/submarkets.json');
 
 const metrosData = JSON.parse(fs.readFileSync(metrosPath, 'utf8'));
 
-// Generate realistic time period data
+// Generate REALISTIC time period data based on actual real estate trends
 function generateTimePeriods(currentChange) {
+  // 3M is the base (current quarterly change)
   const threeMonth = currentChange;
-  const oneYear = threeMonth * 3.5 + (Math.random() - 0.5) * 2;
-  const twoYear = oneYear * 1.8 + (Math.random() - 0.5) * 3;
-  const fiveYear = twoYear * 2.2 + Math.random() * 5;
-  const tenYear = fiveYear * 1.8 + Math.random() * 10;
+
+  // 1Y: Annual change is typically 1.2-1.5x the quarterly trend (with some variation)
+  // Hot markets might have 8-12% annual, declining markets -5% to -10%
+  const oneYear = threeMonth * (1.2 + Math.random() * 0.3) + (Math.random() - 0.5) * 1;
+
+  // 2Y: Total appreciation over 2 years (not compounded heavily)
+  // Should be roughly 1.8-2.2x the annual change
+  const twoYear = oneYear * (1.8 + Math.random() * 0.4);
+
+  // 5Y: Real estate typically appreciates 3-8% annually
+  // So over 5 years, that's 15-40% total in normal markets
+  const annualRate = oneYear; // Use 1Y as baseline
+  const fiveYear = annualRate * (4 + Math.random() * 1.5);
+
+  // 10Y: Most markets see 30-80% appreciation over 10 years
+  // That's 3-8% annually compounded
+  const tenYear = fiveYear * (1.6 + Math.random() * 0.5);
 
   return {
     "3M": parseFloat(threeMonth.toFixed(1)),
@@ -112,7 +126,7 @@ metrosData.metros.forEach(metro => {
     const priceVariation = 0.7 + Math.random() * 0.6; // 70% to 130% of metro median
     const medianPrice = Math.round(metro.medianPrice * priceVariation);
 
-    // Price change variation
+    // Price change variation (submarkets vary from metro average)
     const priceChange = metro.priceChange + (Math.random() - 0.5) * 4;
 
     const submarket = {
@@ -138,6 +152,7 @@ metrosData.metros.forEach(metro => {
 fs.writeFileSync(metrosPath, JSON.stringify(metrosData, null, 2));
 fs.writeFileSync(submarkeetsPath, JSON.stringify({ submarkets: allSubmarkets }, null, 2));
 
-console.log('✓ Updated metros.json with enhanced data');
+console.log('✓ Updated metros.json with REALISTIC data');
 console.log(`✓ Generated ${allSubmarkets.length} submarkets across ${metrosData.metros.length} metros`);
-console.log('✓ Added STR metrics, rental yield, price per sqft');
+console.log('✓ Fixed: Annual appreciation now realistic (3-10% typically)');
+console.log('✓ Fixed: Multi-year trends now believable');
