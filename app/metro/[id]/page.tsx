@@ -60,7 +60,7 @@ export default function MetroPage() {
   const priceChange = metro.priceChangeByPeriod[timePeriod];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <div className="max-w-[1800px] mx-auto p-6 space-y-6">
         {/* Header */}
         <div>
@@ -91,25 +91,25 @@ export default function MetroPage() {
 
         {/* Metro Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Card className="bg-gradient-to-br from-blue-50 to-blue-100 shadow-xl border-blue-200">
-            <Text className="text-blue-900 font-semibold">Median Price</Text>
-            <Metric className="text-blue-900 text-3xl">{formatCurrency(metro.medianPrice)}</Metric>
-            <Text className="text-blue-700 text-sm mt-2">${metro.pricePerSqft}/sqft</Text>
+          <Card className="bg-blue-100 shadow-xl border-blue-300">
+            <Text className="text-black font-semibold">Median Price</Text>
+            <Metric className="text-black text-3xl">{formatCurrency(metro.medianPrice)}</Metric>
+            <Text className="text-gray-700 text-sm mt-2">${metro.pricePerSqft}/sqft</Text>
           </Card>
-          <Card className="bg-gradient-to-br from-purple-50 to-purple-100 shadow-xl border-purple-200">
-            <Text className="text-purple-900 font-semibold">STR Revenue</Text>
-            <Metric className="text-purple-900 text-3xl">${metro.strMetrics.revPAR}/day</Metric>
-            <Text className="text-purple-700 text-sm mt-2">{formatCurrency(metro.strMetrics.annualRevenue)}/year</Text>
+          <Card className="bg-purple-100 shadow-xl border-purple-300">
+            <Text className="text-black font-semibold">STR Revenue</Text>
+            <Metric className="text-black text-3xl">${metro.strMetrics.revPAR}/day</Metric>
+            <Text className="text-gray-700 text-sm mt-2">{formatCurrency(metro.strMetrics.annualRevenue)}/year</Text>
           </Card>
-          <Card className="bg-gradient-to-br from-emerald-50 to-emerald-100 shadow-xl border-emerald-200">
-            <Text className="text-emerald-900 font-semibold">Rental Yield</Text>
-            <Metric className="text-emerald-900 text-3xl">{metro.rentalYield.toFixed(2)}%</Metric>
-            <Text className="text-emerald-700 text-sm mt-2">Annual return on investment</Text>
+          <Card className="bg-green-100 shadow-xl border-green-300">
+            <Text className="text-black font-semibold">Rental Yield</Text>
+            <Metric className="text-black text-3xl">{metro.rentalYield.toFixed(2)}%</Metric>
+            <Text className="text-gray-700 text-sm mt-2">Annual return on investment</Text>
           </Card>
-          <Card className="bg-gradient-to-br from-amber-50 to-amber-100 shadow-xl border-amber-200">
-            <Text className="text-amber-900 font-semibold">Market Activity</Text>
-            <Metric className="text-amber-900 text-3xl">{metro.daysOnMarket}</Metric>
-            <Text className="text-amber-700 text-sm mt-2">Days on market</Text>
+          <Card className="bg-amber-100 shadow-xl border-amber-300">
+            <Text className="text-black font-semibold">Market Activity</Text>
+            <Metric className="text-black text-3xl">{metro.daysOnMarket}</Metric>
+            <Text className="text-gray-700 text-sm mt-2">Days on market</Text>
           </Card>
         </div>
 
@@ -149,15 +149,15 @@ export default function MetroPage() {
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded"></div>
+                        <div className="w-4 h-4 bg-green-300 rounded"></div>
                         <span className="text-gray-700 font-medium">Strong Growth</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 bg-gradient-to-br from-gray-200 to-gray-300 rounded"></div>
+                        <div className="w-4 h-4 bg-gray-200 rounded"></div>
                         <span className="text-gray-700 font-medium">Neutral</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 bg-gradient-to-br from-red-500 to-red-600 rounded"></div>
+                        <div className="w-4 h-4 bg-red-200 rounded"></div>
                         <span className="text-gray-700 font-medium">Declining</span>
                       </div>
                     </div>
@@ -170,19 +170,21 @@ export default function MetroPage() {
                             key={submarket.id}
                             className={`${getPriceChangeColor(
                               submarketChange
-                            )} p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200`}
+                            )} p-4 rounded-lg border-2 border-gray-300 hover:border-gray-500 transition-all`}
                           >
-                            <div className="text-sm font-bold mb-1">
-                              {submarket.name}
-                            </div>
-                            <div className="text-2xl font-black mt-3 mb-2">
-                              {formatPercent(submarketChange)}
-                            </div>
-                            <div className="text-xs opacity-90 mb-1">
-                              {formatCurrency(submarket.medianPrice)}
-                            </div>
-                            <div className="text-xs opacity-75">
-                              ${submarket.pricePerSqft}/sqft
+                            <div className="text-black">
+                              <div className="text-sm font-bold mb-1">
+                                {submarket.name}
+                              </div>
+                              <div className="text-2xl font-black mt-3 mb-2 text-black">
+                                {formatPercent(submarketChange)}
+                              </div>
+                              <div className="text-xs text-gray-700 mb-1">
+                                {formatCurrency(submarket.medianPrice)}
+                              </div>
+                              <div className="text-xs text-gray-700">
+                                ${submarket.pricePerSqft}/sqft
+                              </div>
                             </div>
                           </div>
                         );

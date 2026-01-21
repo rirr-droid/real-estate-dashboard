@@ -18,34 +18,23 @@ export function getLastUpdated(): string {
   return metrosData.lastUpdated;
 }
 
-// Clean, modern color system for price changes - ALL TEXT DARK FOR READABILITY
+// SIMPLE color system - ALL TEXT IS BLACK
 export function getPriceChangeColor(priceChange: number): string {
-  // Strong positive - darker backgrounds with white text
-  if (priceChange >= 10) return "bg-emerald-600 text-white shadow-lg";
-  if (priceChange >= 7) return "bg-emerald-500 text-white shadow-lg";
-  if (priceChange >= 5) return "bg-emerald-400 text-gray-900 shadow-md";
-  // Moderate positive - light backgrounds with dark text
-  if (priceChange >= 3) return "bg-emerald-300 text-gray-900 shadow-md";
-  if (priceChange >= 1) return "bg-green-200 text-gray-900 shadow-sm";
-  if (priceChange > 0) return "bg-green-100 text-gray-900 shadow-sm";
-  // Neutral
-  if (priceChange === 0) return "bg-gray-200 text-gray-900 shadow-sm";
-  // Slight negative
-  if (priceChange > -1) return "bg-orange-100 text-gray-900 shadow-sm";
-  if (priceChange > -3) return "bg-orange-200 text-gray-900 shadow-sm";
-  // Moderate negative
-  if (priceChange > -5) return "bg-orange-300 text-gray-900 shadow-md";
-  if (priceChange > -7) return "bg-red-400 text-gray-900 shadow-md";
-  // Strong negative - darker backgrounds with white text
-  return "bg-red-500 text-white shadow-lg";
+  if (priceChange >= 7) return "bg-green-300";
+  if (priceChange >= 4) return "bg-green-200";
+  if (priceChange >= 1) return "bg-green-100";
+  if (priceChange > 0) return "bg-green-50";
+  if (priceChange === 0) return "bg-gray-100";
+  if (priceChange > -1) return "bg-red-50";
+  if (priceChange > -4) return "bg-red-100";
+  return "bg-red-200";
 }
 
-// Simpler color for badges
-export function getBadgeColor(priceChange: number): "green" | "emerald" | "yellow" | "orange" | "red" {
+// Badge colors for Tremor
+export function getBadgeColor(priceChange: number): "green" | "emerald" | "gray" | "orange" | "red" {
   if (priceChange >= 5) return "green";
   if (priceChange >= 0) return "emerald";
-  if (priceChange >= -3) return "yellow";
-  if (priceChange >= -7) return "orange";
+  if (priceChange >= -3) return "orange";
   return "red";
 }
 

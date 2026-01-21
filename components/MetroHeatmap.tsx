@@ -18,26 +18,22 @@ export default function MetroHeatmap({ metros, timePeriod }: MetroHeatmapProps) 
           <Link
             key={metro.id}
             href={`/metro/${metro.id}`}
-            className={`${getPriceChangeColor(
-              priceChange
-            )} p-4 rounded-xl hover:scale-105 transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl`}
+            className={`${getPriceChangeColor(priceChange)} p-4 rounded-lg border-2 border-gray-300 hover:border-gray-500 transition-all cursor-pointer`}
           >
-            <div className="flex flex-col h-full">
+            <div className="text-black">
               <div className="text-sm font-bold mb-1">
                 {metro.name}
               </div>
-              <div className="text-xs opacity-90 mb-3">{metro.state}</div>
+              <div className="text-xs text-gray-700 mb-3">{metro.state}</div>
 
-              <div className="mt-auto">
-                <div className="text-2xl font-black mb-2">
-                  {formatPercent(priceChange)}
-                </div>
-                <div className="text-xs opacity-90">
-                  {formatCurrency(metro.medianPrice)}
-                </div>
-                <div className="text-xs opacity-75 mt-1">
-                  ${metro.pricePerSqft}/sqft
-                </div>
+              <div className="text-2xl font-black mb-2 text-black">
+                {formatPercent(priceChange)}
+              </div>
+              <div className="text-xs text-black mb-1">
+                {formatCurrency(metro.medianPrice)}
+              </div>
+              <div className="text-xs text-gray-700">
+                ${metro.pricePerSqft}/sqft
               </div>
             </div>
           </Link>

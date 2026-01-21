@@ -21,11 +21,11 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <div className="max-w-[1800px] mx-auto p-6 space-y-6">
         {/* Header */}
         <div className="text-center space-y-2 py-8">
-          <Title className="text-4xl md:text-5xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <Title className="text-4xl md:text-5xl font-black text-gray-900">
             Real Estate Market Intelligence
           </Title>
           <Text className="text-gray-600 text-lg">
@@ -65,15 +65,15 @@ export default function Home() {
                     </Text>
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded"></div>
+                        <div className="w-4 h-4 bg-green-300 rounded"></div>
                         <span className="text-gray-700">Strong Growth</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 bg-gradient-to-br from-gray-200 to-gray-300 rounded"></div>
+                        <div className="w-4 h-4 bg-gray-200 rounded"></div>
                         <span className="text-gray-700">Neutral</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 bg-gradient-to-br from-red-500 to-red-600 rounded"></div>
+                        <div className="w-4 h-4 bg-red-200 rounded"></div>
                         <span className="text-gray-700">Declining</span>
                       </div>
                     </div>

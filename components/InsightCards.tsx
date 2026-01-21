@@ -20,41 +20,41 @@ export default function InsightCards({ metros }: InsightCardsProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {/* Market Overview */}
-      <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
-        <Text className="text-blue-900 font-semibold">Market Average</Text>
-        <Metric className="text-blue-900">{formatPercent(avgPriceChange)}</Metric>
-        <Text className="text-blue-700 text-sm mt-2">
+      <Card className="bg-blue-100 border-blue-300">
+        <Text className="text-black font-semibold">Market Average</Text>
+        <Metric className="text-black">{formatPercent(avgPriceChange)}</Metric>
+        <Text className="text-gray-700 text-sm mt-2">
           1-year price change across {metros.length} metros
         </Text>
       </Card>
 
       {/* Hot Markets */}
-      <Card className="bg-gradient-to-br from-emerald-50 to-emerald-100 border-emerald-200">
-        <Text className="text-emerald-900 font-semibold">Hot Markets</Text>
-        <Metric className="text-emerald-900">{hotMarkets}</Metric>
-        <Text className="text-emerald-700 text-sm mt-2">
+      <Card className="bg-green-100 border-green-300">
+        <Text className="text-black font-semibold">Hot Markets</Text>
+        <Metric className="text-black">{hotMarkets}</Metric>
+        <Text className="text-gray-700 text-sm mt-2">
           Markets with 7%+ annual growth
         </Text>
       </Card>
 
       {/* STR Performance */}
-      <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200">
-        <Text className="text-purple-900 font-semibold">Avg STR RevPAR</Text>
-        <Metric className="text-purple-900">${avgRevPAR.toFixed(0)}</Metric>
-        <Text className="text-purple-700 text-sm mt-2">
+      <Card className="bg-purple-100 border-purple-300">
+        <Text className="text-black font-semibold">Avg STR RevPAR</Text>
+        <Metric className="text-black">${avgRevPAR.toFixed(0)}</Metric>
+        <Text className="text-gray-700 text-sm mt-2">
           Revenue per available room/day
         </Text>
       </Card>
 
       {/* Top Performer */}
-      <Card className="bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200">
-        <Text className="text-amber-900 font-semibold">Top Performer</Text>
+      <Card className="bg-amber-100 border-amber-300">
+        <Text className="text-black font-semibold">Top Performer</Text>
         <Link href={`/metro/${topPerformers[0].id}`}>
-          <Metric className="text-amber-900 hover:underline cursor-pointer">
+          <Metric className="text-black hover:underline cursor-pointer">
             {topPerformers[0].name}
           </Metric>
         </Link>
-        <Text className="text-amber-700 text-sm mt-2">
+        <Text className="text-gray-700 text-sm mt-2">
           {formatPercent(topPerformers[0].priceChangeByPeriod["1Y"])} growth
         </Text>
       </Card>
