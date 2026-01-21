@@ -1,0 +1,245 @@
+{
+  "metros": [
+    {
+      "id": "nyc",
+      "name": "New York",
+      "state": "NY",
+      "priceChange": 5.2,
+      "medianPrice": 685000,
+      "volume": 12450,
+      "inventory": 23400,
+      "daysOnMarket": 45
+    },
+    {
+      "id": "la",
+      "name": "Los Angeles",
+      "state": "CA",
+      "priceChange": 3.8,
+      "medianPrice": 875000,
+      "volume": 9800,
+      "inventory": 18200,
+      "daysOnMarket": 38
+    },
+    {
+      "id": "chicago",
+      "name": "Chicago",
+      "state": "IL",
+      "priceChange": -1.2,
+      "medianPrice": 325000,
+      "volume": 8900,
+      "inventory": 22100,
+      "daysOnMarket": 52
+    },
+    {
+      "id": "dallas",
+      "name": "Dallas",
+      "state": "TX",
+      "priceChange": 8.5,
+      "medianPrice": 425000,
+      "volume": 15200,
+      "inventory": 19800,
+      "daysOnMarket": 32
+    },
+    {
+      "id": "houston",
+      "name": "Houston",
+      "state": "TX",
+      "priceChange": 7.3,
+      "medianPrice": 385000,
+      "volume": 13500,
+      "inventory": 21500,
+      "daysOnMarket": 35
+    },
+    {
+      "id": "phoenix",
+      "name": "Phoenix",
+      "state": "AZ",
+      "priceChange": 12.4,
+      "medianPrice": 465000,
+      "volume": 11200,
+      "inventory": 16700,
+      "daysOnMarket": 28
+    },
+    {
+      "id": "philadelphia",
+      "name": "Philadelphia",
+      "state": "PA",
+      "priceChange": 2.1,
+      "medianPrice": 345000,
+      "volume": 7800,
+      "inventory": 19400,
+      "daysOnMarket": 48
+    },
+    {
+      "id": "san-antonio",
+      "name": "San Antonio",
+      "state": "TX",
+      "priceChange": 6.9,
+      "medianPrice": 315000,
+      "volume": 9400,
+      "inventory": 17200,
+      "daysOnMarket": 36
+    },
+    {
+      "id": "san-diego",
+      "name": "San Diego",
+      "state": "CA",
+      "priceChange": 4.2,
+      "medianPrice": 925000,
+      "volume": 6700,
+      "inventory": 12300,
+      "daysOnMarket": 41
+    },
+    {
+      "id": "austin",
+      "name": "Austin",
+      "state": "TX",
+      "priceChange": -3.5,
+      "medianPrice": 565000,
+      "volume": 8200,
+      "inventory": 24500,
+      "daysOnMarket": 58
+    },
+    {
+      "id": "san-jose",
+      "name": "San Jose",
+      "state": "CA",
+      "priceChange": 1.8,
+      "medianPrice": 1425000,
+      "volume": 4200,
+      "inventory": 8900,
+      "daysOnMarket": 43
+    },
+    {
+      "id": "jacksonville",
+      "name": "Jacksonville",
+      "state": "FL",
+      "priceChange": 9.2,
+      "medianPrice": 385000,
+      "volume": 7600,
+      "inventory": 14800,
+      "daysOnMarket": 31
+    },
+    {
+      "id": "columbus",
+      "name": "Columbus",
+      "state": "OH",
+      "priceChange": 4.7,
+      "medianPrice": 295000,
+      "volume": 6800,
+      "inventory": 16200,
+      "daysOnMarket": 39
+    },
+    {
+      "id": "charlotte",
+      "name": "Charlotte",
+      "state": "NC",
+      "priceChange": 6.3,
+      "medianPrice": 415000,
+      "volume": 8900,
+      "inventory": 15400,
+      "daysOnMarket": 34
+    },
+    {
+      "id": "seattle",
+      "name": "Seattle",
+      "state": "WA",
+      "priceChange": -2.1,
+      "medianPrice": 785000,
+      "volume": 7200,
+      "inventory": 20100,
+      "daysOnMarket": 55
+    },
+    {
+      "id": "denver",
+      "name": "Denver",
+      "state": "CO",
+      "priceChange": 0.8,
+      "medianPrice": 625000,
+      "volume": 8400,
+      "inventory": 18700,
+      "daysOnMarket": 46
+    },
+    {
+      "id": "boston",
+      "name": "Boston",
+      "state": "MA",
+      "priceChange": 3.4,
+      "medianPrice": 725000,
+      "volume": 6900,
+      "inventory": 14200,
+      "daysOnMarket": 42
+    },
+    {
+      "id": "nashville",
+      "name": "Nashville",
+      "state": "TN",
+      "priceChange": 5.9,
+      "medianPrice": 485000,
+      "volume": 7800,
+      "inventory": 16900,
+      "daysOnMarket": 37
+    },
+    {
+      "id": "atlanta",
+      "name": "Atlanta",
+      "state": "GA",
+      "priceChange": 7.1,
+      "medianPrice": 395000,
+      "volume": 12100,
+      "inventory": 18600,
+      "daysOnMarket": 33
+    },
+    {
+      "id": "miami",
+      "name": "Miami",
+      "state": "FL",
+      "priceChange": 11.3,
+      "medianPrice": 545000,
+      "volume": 10200,
+      "inventory": 15800,
+      "daysOnMarket": 29
+    },
+    {
+      "id": "tampa",
+      "name": "Tampa",
+      "state": "FL",
+      "priceChange": 10.8,
+      "medianPrice": 425000,
+      "volume": 9600,
+      "inventory": 16300,
+      "daysOnMarket": 30
+    },
+    {
+      "id": "orlando",
+      "name": "Orlando",
+      "state": "FL",
+      "priceChange": 8.9,
+      "medianPrice": 395000,
+      "volume": 8700,
+      "inventory": 15700,
+      "daysOnMarket": 32
+    },
+    {
+      "id": "raleigh",
+      "name": "Raleigh",
+      "state": "NC",
+      "priceChange": 5.6,
+      "medianPrice": 445000,
+      "volume": 6400,
+      "inventory": 13800,
+      "daysOnMarket": 38
+    },
+    {
+      "id": "las-vegas",
+      "name": "Las Vegas",
+      "state": "NV",
+      "priceChange": 9.7,
+      "medianPrice": 465000,
+      "volume": 7900,
+      "inventory": 14600,
+      "daysOnMarket": 31
+    }
+  ],
+  "lastUpdated": "2026-01-21T00:00:00Z"
+}

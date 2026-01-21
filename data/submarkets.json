@@ -1,0 +1,224 @@
+{
+  "submarkets": [
+    {
+      "id": "nyc-manhattan",
+      "name": "Manhattan",
+      "metroId": "nyc",
+      "priceChange": 6.8,
+      "medianPrice": 1250000,
+      "volume": 3200,
+      "inventory": 5800,
+      "daysOnMarket": 38
+    },
+    {
+      "id": "nyc-brooklyn",
+      "name": "Brooklyn",
+      "metroId": "nyc",
+      "priceChange": 5.4,
+      "medianPrice": 925000,
+      "volume": 4100,
+      "inventory": 7200,
+      "daysOnMarket": 42
+    },
+    {
+      "id": "nyc-queens",
+      "name": "Queens",
+      "metroId": "nyc",
+      "priceChange": 4.1,
+      "medianPrice": 685000,
+      "volume": 3800,
+      "inventory": 6900,
+      "daysOnMarket": 48
+    },
+    {
+      "id": "nyc-bronx",
+      "name": "Bronx",
+      "metroId": "nyc",
+      "priceChange": 3.2,
+      "medianPrice": 485000,
+      "volume": 1350,
+      "inventory": 3500,
+      "daysOnMarket": 51
+    },
+    {
+      "id": "la-west-la",
+      "name": "West Los Angeles",
+      "metroId": "la",
+      "priceChange": 5.2,
+      "medianPrice": 1650000,
+      "volume": 1800,
+      "inventory": 3200,
+      "daysOnMarket": 34
+    },
+    {
+      "id": "la-santa-monica",
+      "name": "Santa Monica",
+      "metroId": "la",
+      "priceChange": 4.8,
+      "medianPrice": 1950000,
+      "volume": 850,
+      "inventory": 1500,
+      "daysOnMarket": 36
+    },
+    {
+      "id": "la-pasadena",
+      "name": "Pasadena",
+      "metroId": "la",
+      "priceChange": 3.2,
+      "medianPrice": 1025000,
+      "volume": 1450,
+      "inventory": 2800,
+      "daysOnMarket": 39
+    },
+    {
+      "id": "la-long-beach",
+      "name": "Long Beach",
+      "metroId": "la",
+      "priceChange": 2.8,
+      "medianPrice": 785000,
+      "volume": 2200,
+      "inventory": 4100,
+      "daysOnMarket": 41
+    },
+    {
+      "id": "la-glendale",
+      "name": "Glendale",
+      "metroId": "la",
+      "priceChange": 3.5,
+      "medianPrice": 925000,
+      "volume": 1100,
+      "inventory": 2400,
+      "daysOnMarket": 38
+    },
+    {
+      "id": "dallas-uptown",
+      "name": "Uptown",
+      "metroId": "dallas",
+      "priceChange": 10.2,
+      "medianPrice": 625000,
+      "volume": 2400,
+      "inventory": 3100,
+      "daysOnMarket": 28
+    },
+    {
+      "id": "dallas-plano",
+      "name": "Plano",
+      "metroId": "dallas",
+      "priceChange": 9.8,
+      "medianPrice": 485000,
+      "volume": 3800,
+      "inventory": 4900,
+      "daysOnMarket": 30
+    },
+    {
+      "id": "dallas-frisco",
+      "name": "Frisco",
+      "metroId": "dallas",
+      "priceChange": 11.5,
+      "medianPrice": 565000,
+      "volume": 3200,
+      "inventory": 4200,
+      "daysOnMarket": 26
+    },
+    {
+      "id": "dallas-irving",
+      "name": "Irving",
+      "metroId": "dallas",
+      "priceChange": 7.9,
+      "medianPrice": 385000,
+      "volume": 2900,
+      "inventory": 3800,
+      "daysOnMarket": 33
+    },
+    {
+      "id": "dallas-arlington",
+      "name": "Arlington",
+      "metroId": "dallas",
+      "priceChange": 6.8,
+      "medianPrice": 345000,
+      "volume": 2900,
+      "inventory": 3800,
+      "daysOnMarket": 35
+    },
+    {
+      "id": "phoenix-scottsdale",
+      "name": "Scottsdale",
+      "metroId": "phoenix",
+      "priceChange": 14.2,
+      "medianPrice": 725000,
+      "volume": 2800,
+      "inventory": 3900,
+      "daysOnMarket": 24
+    },
+    {
+      "id": "phoenix-tempe",
+      "name": "Tempe",
+      "metroId": "phoenix",
+      "priceChange": 13.1,
+      "medianPrice": 485000,
+      "volume": 2400,
+      "inventory": 3200,
+      "daysOnMarket": 26
+    },
+    {
+      "id": "phoenix-mesa",
+      "name": "Mesa",
+      "metroId": "phoenix",
+      "priceChange": 11.8,
+      "medianPrice": 425000,
+      "volume": 3100,
+      "inventory": 4200,
+      "daysOnMarket": 29
+    },
+    {
+      "id": "phoenix-chandler",
+      "name": "Chandler",
+      "metroId": "phoenix",
+      "priceChange": 12.9,
+      "medianPrice": 525000,
+      "volume": 2900,
+      "inventory": 3800,
+      "daysOnMarket": 27
+    },
+    {
+      "id": "miami-south-beach",
+      "name": "South Beach",
+      "metroId": "miami",
+      "priceChange": 13.8,
+      "medianPrice": 825000,
+      "volume": 1800,
+      "inventory": 2600,
+      "daysOnMarket": 25
+    },
+    {
+      "id": "miami-coral-gables",
+      "name": "Coral Gables",
+      "metroId": "miami",
+      "priceChange": 12.1,
+      "medianPrice": 925000,
+      "volume": 1500,
+      "inventory": 2200,
+      "daysOnMarket": 27
+    },
+    {
+      "id": "miami-brickell",
+      "name": "Brickell",
+      "metroId": "miami",
+      "priceChange": 11.5,
+      "medianPrice": 685000,
+      "volume": 2200,
+      "inventory": 3100,
+      "daysOnMarket": 28
+    },
+    {
+      "id": "miami-wynwood",
+      "name": "Wynwood",
+      "metroId": "miami",
+      "priceChange": 10.2,
+      "medianPrice": 545000,
+      "volume": 1900,
+      "inventory": 2800,
+      "daysOnMarket": 31
+    }
+  ]
+}
