@@ -166,11 +166,12 @@ export default function MetroPage() {
                       {submarkets.map((submarket) => {
                         const submarketChange = submarket.priceChangeByPeriod[timePeriod];
                         return (
-                          <div
+                          <Link
                             key={submarket.id}
+                            href={`/submarket/${submarket.id}`}
                             className={`${getPriceChangeColor(
                               submarketChange
-                            )} p-4 rounded-lg border-2 border-gray-300 hover:border-gray-500 transition-all`}
+                            )} p-4 rounded-lg border-2 border-gray-300 hover:border-gray-500 transition-all cursor-pointer hover:scale-105`}
                           >
                             <div className="text-black">
                               <div className="text-sm font-bold mb-1">
@@ -186,7 +187,7 @@ export default function MetroPage() {
                                 ${submarket.pricePerSqft}/sqft
                               </div>
                             </div>
-                          </div>
+                          </Link>
                         );
                       })}
                     </div>

@@ -14,6 +14,10 @@ export function getSubmarketsByMetroId(metroId: string): Submarket[] {
   return submarketData.submarkets.filter((s) => s.metroId === metroId);
 }
 
+export function getSubmarketById(id: string): Submarket | undefined {
+  return submarketData.submarkets.find((s) => s.id === id);
+}
+
 export function getLastUpdated(): string {
   return metrosData.lastUpdated;
 }

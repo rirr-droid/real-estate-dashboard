@@ -19,7 +19,10 @@ export interface STRMetrics {
 export interface Submarket {
   id: string;
   name: string;
+  slug: string;
   metroId: string;
+  metroName: string;
+  state: string;
   priceChange: number;
   priceChangeByPeriod: PriceChangeByPeriod;
   medianPrice: number;
@@ -29,6 +32,7 @@ export interface Submarket {
   daysOnMarket: number;
   rentalYield: number;
   strMetrics: STRMetrics;
+  redfinUrl: string;
 }
 
 export interface Metro {
