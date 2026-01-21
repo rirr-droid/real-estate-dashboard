@@ -4,155 +4,155 @@
       "id": "nyc",
       "name": "New York",
       "state": "NY",
-      "priceChange": 5.2,
-      "medianPrice": 685000,
+      "priceChange": 5.4,
+      "medianPrice": 780000,
       "volume": 12450,
       "inventory": 23400,
       "daysOnMarket": 45,
       "priceChangeByPeriod": {
-        "3M": 5.2,
-        "1Y": 7.3,
-        "2Y": 14,
-        "5Y": 29.7,
-        "10Y": 49
+        "3M": 5.4,
+        "1Y": 7.7,
+        "2Y": 14.5,
+        "5Y": 40.7,
+        "10Y": 83.9
       },
-      "pricePerSqft": 337,
-      "rentalYield": 7.24,
+      "pricePerSqft": 375,
+      "rentalYield": 5.64,
       "strMetrics": {
-        "averageDailyRate": 265,
-        "occupancyRate": 54.4,
-        "revPAR": 144,
-        "annualRevenue": 52645,
-        "seasonalityScore": 6.4
+        "averageDailyRate": 293,
+        "occupancyRate": 59,
+        "revPAR": 173,
+        "annualRevenue": 63058,
+        "seasonalityScore": 5.6
       }
     },
     {
       "id": "la",
       "name": "Los Angeles",
       "state": "CA",
-      "priceChange": 3.8,
-      "medianPrice": 875000,
+      "priceChange": -1.7,
+      "medianPrice": 890000,
       "volume": 9800,
       "inventory": 18200,
       "daysOnMarket": 38,
       "priceChangeByPeriod": {
-        "3M": 3.8,
-        "1Y": 5,
-        "2Y": 9.3,
-        "5Y": 20.2,
-        "10Y": 40.1
+        "3M": -1.7,
+        "1Y": -2,
+        "2Y": -4,
+        "5Y": -8.5,
+        "10Y": -14.2
       },
-      "pricePerSqft": 436,
-      "rentalYield": 6.41,
+      "pricePerSqft": 422,
+      "rentalYield": 6.47,
       "strMetrics": {
-        "averageDailyRate": 326,
-        "occupancyRate": 55.3,
-        "revPAR": 180,
-        "annualRevenue": 65861,
-        "seasonalityScore": 4.4
+        "averageDailyRate": 337,
+        "occupancyRate": 58.8,
+        "revPAR": 198,
+        "annualRevenue": 72351,
+        "seasonalityScore": 4.6
       }
     },
     {
       "id": "chicago",
       "name": "Chicago",
       "state": "IL",
-      "priceChange": -1.2,
-      "medianPrice": 325000,
+      "priceChange": 4.4,
+      "medianPrice": 355000,
       "volume": 8900,
       "inventory": 22100,
       "daysOnMarket": 52,
       "priceChangeByPeriod": {
-        "3M": -1.2,
-        "1Y": -1.8,
-        "2Y": -3.3,
-        "5Y": -8.6,
-        "10Y": -14.6
+        "3M": 4.4,
+        "1Y": 6.6,
+        "2Y": 12.7,
+        "5Y": 27.1,
+        "10Y": 45.2
       },
-      "pricePerSqft": 162,
-      "rentalYield": 15.87,
+      "pricePerSqft": 166,
+      "rentalYield": 14.59,
       "strMetrics": {
-        "averageDailyRate": 155,
-        "occupancyRate": 54.9,
-        "revPAR": 85,
-        "annualRevenue": 30977,
-        "seasonalityScore": 6
+        "averageDailyRate": 149,
+        "occupancyRate": 63.9,
+        "revPAR": 95,
+        "annualRevenue": 34658,
+        "seasonalityScore": 5.5
       }
     },
     {
       "id": "dallas",
       "name": "Dallas",
       "state": "TX",
-      "priceChange": 8.5,
-      "medianPrice": 425000,
+      "priceChange": -7.6,
+      "medianPrice": 390000,
       "volume": 15200,
       "inventory": 19800,
       "daysOnMarket": 32,
       "priceChangeByPeriod": {
-        "3M": 8.5,
-        "1Y": 10,
-        "2Y": 20,
-        "5Y": 42.1,
-        "10Y": 81.9
+        "3M": -7.6,
+        "1Y": -10.3,
+        "2Y": -20.3,
+        "5Y": -50.4,
+        "10Y": -83.6
       },
-      "pricePerSqft": 225,
-      "rentalYield": 12.12,
+      "pricePerSqft": 208,
+      "rentalYield": 12.14,
       "strMetrics": {
-        "averageDailyRate": 165,
-        "occupancyRate": 62.7,
-        "revPAR": 104,
-        "annualRevenue": 37789,
-        "seasonalityScore": 6.6
+        "averageDailyRate": 146,
+        "occupancyRate": 66.5,
+        "revPAR": 97,
+        "annualRevenue": 35537,
+        "seasonalityScore": 6.1
       }
     },
     {
       "id": "houston",
       "name": "Houston",
       "state": "TX",
-      "priceChange": 7.3,
-      "medianPrice": 385000,
+      "priceChange": 0,
+      "medianPrice": 335000,
       "volume": 13500,
       "inventory": 21500,
       "daysOnMarket": 35,
       "priceChangeByPeriod": {
-        "3M": 7.3,
-        "1Y": 9.9,
-        "2Y": 19,
-        "5Y": 48.7,
-        "10Y": 89.2
+        "3M": 0,
+        "1Y": 0.3,
+        "2Y": 0.6,
+        "5Y": 1.4,
+        "10Y": 2.9
       },
-      "pricePerSqft": 201,
-      "rentalYield": 12.72,
+      "pricePerSqft": 164,
+      "rentalYield": 14.31,
       "strMetrics": {
-        "averageDailyRate": 142,
-        "occupancyRate": 56.8,
-        "revPAR": 81,
-        "annualRevenue": 29497,
-        "seasonalityScore": 6
+        "averageDailyRate": 114,
+        "occupancyRate": 59.3,
+        "revPAR": 68,
+        "annualRevenue": 24726,
+        "seasonalityScore": 6.9
       }
     },
     {
       "id": "phoenix",
       "name": "Phoenix",
       "state": "AZ",
-      "priceChange": 12.4,
-      "medianPrice": 465000,
+      "priceChange": 1,
+      "medianPrice": 469500,
       "volume": 11200,
       "inventory": 16700,
       "daysOnMarket": 28,
       "priceChangeByPeriod": {
-        "3M": 12.4,
-        "1Y": 17.3,
-        "2Y": 31.9,
-        "5Y": 92.2,
-        "10Y": 156.5
+        "3M": 1,
+        "1Y": 1.4,
+        "2Y": 3,
+        "5Y": 7.8,
+        "10Y": 16
       },
-      "pricePerSqft": 227,
-      "rentalYield": 10.14,
+      "pricePerSqft": 242,
+      "rentalYield": 10.22,
       "strMetrics": {
-        "averageDailyRate": 195,
-        "occupancyRate": 63.6,
-        "revPAR": 124,
-        "annualRevenue": 45359,
+        "averageDailyRate": 185,
+        "occupancyRate": 62.6,
+        "revPAR": 116,
+        "annualRevenue": 42232,
         "seasonalityScore": 7.4
       }
     },
@@ -160,155 +160,155 @@
       "id": "philadelphia",
       "name": "Philadelphia",
       "state": "PA",
-      "priceChange": 2.1,
-      "medianPrice": 345000,
+      "priceChange": 2.3,
+      "medianPrice": 286500,
       "volume": 7800,
       "inventory": 19400,
       "daysOnMarket": 48,
       "priceChangeByPeriod": {
-        "3M": 2.1,
-        "1Y": 2.2,
-        "2Y": 4.2,
-        "5Y": 10.6,
-        "10Y": 21.8
+        "3M": 2.3,
+        "1Y": 2.8,
+        "2Y": 5.6,
+        "5Y": 12.1,
+        "10Y": 23.1
       },
-      "pricePerSqft": 159,
-      "rentalYield": 14.32,
+      "pricePerSqft": 158,
+      "rentalYield": 16.96,
       "strMetrics": {
-        "averageDailyRate": 133,
-        "occupancyRate": 65.3,
-        "revPAR": 87,
-        "annualRevenue": 31722,
-        "seasonalityScore": 6.9
+        "averageDailyRate": 131,
+        "occupancyRate": 54.8,
+        "revPAR": 72,
+        "annualRevenue": 26207,
+        "seasonalityScore": 4.7
       }
     },
     {
       "id": "san-antonio",
       "name": "San Antonio",
       "state": "TX",
-      "priceChange": 6.9,
-      "medianPrice": 315000,
+      "priceChange": -1.6,
+      "medianPrice": 310000,
       "volume": 9400,
       "inventory": 17200,
       "daysOnMarket": 36,
       "priceChangeByPeriod": {
-        "3M": 6.9,
-        "1Y": 9.2,
-        "2Y": 17.2,
-        "5Y": 40.1,
-        "10Y": 73.7
+        "3M": -1.6,
+        "1Y": -2.2,
+        "2Y": -4.1,
+        "5Y": -9.9,
+        "10Y": -17.3
       },
-      "pricePerSqft": 143,
-      "rentalYield": 15.34,
+      "pricePerSqft": 151,
+      "rentalYield": 17.07,
       "strMetrics": {
-        "averageDailyRate": 152,
-        "occupancyRate": 66.5,
-        "revPAR": 101,
-        "annualRevenue": 36881,
-        "seasonalityScore": 5.7
+        "averageDailyRate": 148,
+        "occupancyRate": 53.8,
+        "revPAR": 79,
+        "annualRevenue": 28988,
+        "seasonalityScore": 4.7
       }
     },
     {
       "id": "san-diego",
       "name": "San Diego",
       "state": "CA",
-      "priceChange": 4.2,
-      "medianPrice": 925000,
+      "priceChange": 2.3,
+      "medianPrice": 900000,
       "volume": 6700,
       "inventory": 12300,
       "daysOnMarket": 41,
       "priceChangeByPeriod": {
-        "3M": 4.2,
-        "1Y": 4.7,
-        "2Y": 9.3,
-        "5Y": 21.8,
-        "10Y": 35.9
+        "3M": 2.3,
+        "1Y": 3.2,
+        "2Y": 6.6,
+        "5Y": 15.6,
+        "10Y": 29
       },
-      "pricePerSqft": 474,
-      "rentalYield": 6.35,
+      "pricePerSqft": 460,
+      "rentalYield": 5.39,
       "strMetrics": {
-        "averageDailyRate": 341,
-        "occupancyRate": 55.1,
-        "revPAR": 188,
-        "annualRevenue": 68617,
-        "seasonalityScore": 4.5
+        "averageDailyRate": 321,
+        "occupancyRate": 63.6,
+        "revPAR": 204,
+        "annualRevenue": 74400,
+        "seasonalityScore": 4.1
       }
     },
     {
       "id": "austin",
       "name": "Austin",
       "state": "TX",
-      "priceChange": -3.5,
-      "medianPrice": 565000,
+      "priceChange": -4.2,
+      "medianPrice": 431277,
       "volume": 8200,
       "inventory": 24500,
       "daysOnMarket": 58,
       "priceChangeByPeriod": {
-        "3M": -3.5,
-        "1Y": -5.4,
-        "2Y": -11.4,
-        "5Y": -26.9,
-        "10Y": -45.4
+        "3M": -4.2,
+        "1Y": -5.8,
+        "2Y": -12,
+        "5Y": -25.2,
+        "10Y": -47.1
       },
-      "pricePerSqft": 282,
-      "rentalYield": 8.34,
+      "pricePerSqft": 233,
+      "rentalYield": 12.58,
       "strMetrics": {
-        "averageDailyRate": 211,
-        "occupancyRate": 66.1,
-        "revPAR": 139,
-        "annualRevenue": 50780,
-        "seasonalityScore": 4.1
+        "averageDailyRate": 144,
+        "occupancyRate": 64.2,
+        "revPAR": 93,
+        "annualRevenue": 33767,
+        "seasonalityScore": 5.1
       }
     },
     {
       "id": "san-jose",
       "name": "San Jose",
       "state": "CA",
-      "priceChange": 1.8,
-      "medianPrice": 1425000,
+      "priceChange": -3.9,
+      "medianPrice": 1430000,
       "volume": 4200,
       "inventory": 8900,
       "daysOnMarket": 43,
       "priceChangeByPeriod": {
-        "3M": 1.8,
-        "1Y": 2.9,
-        "2Y": 6.3,
-        "5Y": 11.6,
-        "10Y": 22.1
+        "3M": -3.9,
+        "1Y": -6.2,
+        "2Y": -11.5,
+        "5Y": -28.8,
+        "10Y": -59.5
       },
-      "pricePerSqft": 741,
-      "rentalYield": 3.22,
+      "pricePerSqft": 726,
+      "rentalYield": 4.12,
       "strMetrics": {
-        "averageDailyRate": 506,
-        "occupancyRate": 52.8,
-        "revPAR": 267,
-        "annualRevenue": 97576,
-        "seasonalityScore": 6.6
+        "averageDailyRate": 477,
+        "occupancyRate": 66.2,
+        "revPAR": 316,
+        "annualRevenue": 115249,
+        "seasonalityScore": 5.2
       }
     },
     {
       "id": "jacksonville",
       "name": "Jacksonville",
       "state": "FL",
-      "priceChange": 3.2,
-      "medianPrice": 385000,
+      "priceChange": -2.6,
+      "medianPrice": 370000,
       "volume": 7600,
       "inventory": 14800,
       "daysOnMarket": 38,
       "priceChangeByPeriod": {
-        "3M": 3.2,
-        "1Y": 4.2,
-        "2Y": 9,
-        "5Y": 19.2,
-        "10Y": 39.2
+        "3M": -2.6,
+        "1Y": -3.8,
+        "2Y": -7.9,
+        "5Y": -19.6,
+        "10Y": -41.1
       },
-      "pricePerSqft": 184,
-      "rentalYield": 12.13,
+      "pricePerSqft": 196,
+      "rentalYield": 14,
       "strMetrics": {
-        "averageDailyRate": 163,
-        "occupancyRate": 62.8,
-        "revPAR": 102,
-        "annualRevenue": 37284,
+        "averageDailyRate": 142,
+        "occupancyRate": 54.5,
+        "revPAR": 77,
+        "annualRevenue": 28284,
         "seasonalityScore": 6.4
       }
     },
@@ -316,314 +316,314 @@
       "id": "columbus",
       "name": "Columbus",
       "state": "OH",
-      "priceChange": 4.7,
-      "medianPrice": 295000,
+      "priceChange": 3,
+      "medianPrice": 340000,
       "volume": 6800,
       "inventory": 16200,
       "daysOnMarket": 39,
       "priceChangeByPeriod": {
-        "3M": 4.7,
-        "1Y": 6.5,
-        "2Y": 13.6,
-        "5Y": 30.6,
-        "10Y": 52.2
+        "3M": 3,
+        "1Y": 4.2,
+        "2Y": 7.9,
+        "5Y": 21.7,
+        "10Y": 37.2
       },
-      "pricePerSqft": 142,
-      "rentalYield": 17.65,
+      "pricePerSqft": 155,
+      "rentalYield": 15.46,
       "strMetrics": {
-        "averageDailyRate": 125,
-        "occupancyRate": 65,
-        "revPAR": 81,
-        "annualRevenue": 29548,
-        "seasonalityScore": 5.7
+        "averageDailyRate": 115,
+        "occupancyRate": 54.4,
+        "revPAR": 63,
+        "annualRevenue": 22848,
+        "seasonalityScore": 4.8
       }
     },
     {
       "id": "charlotte",
       "name": "Charlotte",
       "state": "NC",
-      "priceChange": 6.3,
-      "medianPrice": 415000,
+      "priceChange": 4.3,
+      "medianPrice": 412000,
       "volume": 8900,
       "inventory": 15400,
       "daysOnMarket": 34,
       "priceChangeByPeriod": {
-        "3M": 6.3,
-        "1Y": 9.1,
-        "2Y": 18.3,
-        "5Y": 45.7,
-        "10Y": 91.7
+        "3M": 4.3,
+        "1Y": 6.3,
+        "2Y": 13.1,
+        "5Y": 31.3,
+        "10Y": 50.5
       },
-      "pricePerSqft": 194,
-      "rentalYield": 13,
+      "pricePerSqft": 197,
+      "rentalYield": 12.51,
       "strMetrics": {
-        "averageDailyRate": 179,
-        "occupancyRate": 66.6,
-        "revPAR": 119,
-        "annualRevenue": 43454,
-        "seasonalityScore": 4.6
+        "averageDailyRate": 159,
+        "occupancyRate": 56.1,
+        "revPAR": 89,
+        "annualRevenue": 32484,
+        "seasonalityScore": 5.2
       }
     },
     {
       "id": "seattle",
       "name": "Seattle",
       "state": "WA",
-      "priceChange": -2.1,
-      "medianPrice": 785000,
+      "priceChange": 0,
+      "medianPrice": 790000,
       "volume": 7200,
       "inventory": 20100,
       "daysOnMarket": 55,
       "priceChangeByPeriod": {
-        "3M": -2.1,
-        "1Y": -2.3,
-        "2Y": -5.1,
-        "5Y": -12,
-        "10Y": -22.6
+        "3M": 0,
+        "1Y": 0.2,
+        "2Y": 0.3,
+        "5Y": 0.8,
+        "10Y": 1.6
       },
-      "pricePerSqft": 407,
-      "rentalYield": 7.01,
+      "pricePerSqft": 426,
+      "rentalYield": 6.2,
       "strMetrics": {
-        "averageDailyRate": 286,
-        "occupancyRate": 54.7,
-        "revPAR": 157,
-        "annualRevenue": 57179,
-        "seasonalityScore": 6.2
+        "averageDailyRate": 300,
+        "occupancyRate": 53.9,
+        "revPAR": 162,
+        "annualRevenue": 58990,
+        "seasonalityScore": 5.1
       }
     },
     {
       "id": "denver",
       "name": "Denver",
       "state": "CO",
-      "priceChange": 0.8,
-      "medianPrice": 625000,
+      "priceChange": -0.9,
+      "medianPrice": 570000,
       "volume": 8400,
       "inventory": 18700,
       "daysOnMarket": 46,
       "priceChangeByPeriod": {
-        "3M": 0.8,
-        "1Y": 1.3,
-        "2Y": 2.5,
-        "5Y": 5.3,
-        "10Y": 9.3
+        "3M": -0.9,
+        "1Y": -0.9,
+        "2Y": -1.7,
+        "5Y": -3.8,
+        "10Y": -7.7
       },
-      "pricePerSqft": 318,
-      "rentalYield": 7.39,
+      "pricePerSqft": 294,
+      "rentalYield": 8.22,
       "strMetrics": {
-        "averageDailyRate": 210,
-        "occupancyRate": 61.1,
-        "revPAR": 129,
-        "annualRevenue": 46963,
-        "seasonalityScore": 6.5
+        "averageDailyRate": 201,
+        "occupancyRate": 53.1,
+        "revPAR": 107,
+        "annualRevenue": 39040,
+        "seasonalityScore": 5.4
       }
     },
     {
       "id": "boston",
       "name": "Boston",
       "state": "MA",
-      "priceChange": 3.4,
+      "priceChange": 0.7,
       "medianPrice": 725000,
       "volume": 6900,
       "inventory": 14200,
       "daysOnMarket": 42,
       "priceChangeByPeriod": {
-        "3M": 3.4,
-        "1Y": 4.8,
-        "2Y": 10.5,
-        "5Y": 19.7,
-        "10Y": 38.3
+        "3M": 0.7,
+        "1Y": 1.2,
+        "2Y": 2.6,
+        "5Y": 5.6,
+        "10Y": 11.4
       },
-      "pricePerSqft": 345,
-      "rentalYield": 6.24,
+      "pricePerSqft": 398,
+      "rentalYield": 7.24,
       "strMetrics": {
-        "averageDailyRate": 270,
-        "occupancyRate": 55.4,
-        "revPAR": 149,
-        "annualRevenue": 54524,
-        "seasonalityScore": 6
+        "averageDailyRate": 252,
+        "occupancyRate": 52.9,
+        "revPAR": 133,
+        "annualRevenue": 48523,
+        "seasonalityScore": 6.9
       }
     },
     {
       "id": "nashville",
       "name": "Nashville",
       "state": "TN",
-      "priceChange": 5.9,
-      "medianPrice": 485000,
+      "priceChange": 0.7,
+      "medianPrice": 463000,
       "volume": 7800,
       "inventory": 16900,
       "daysOnMarket": 37,
       "priceChangeByPeriod": {
-        "3M": 5.9,
-        "1Y": 7.2,
-        "2Y": 13.5,
-        "5Y": 32.4,
-        "10Y": 54.2
+        "3M": 0.7,
+        "1Y": 0.8,
+        "2Y": 1.8,
+        "5Y": 3.8,
+        "10Y": 6.7
       },
-      "pricePerSqft": 256,
-      "rentalYield": 9.33,
+      "pricePerSqft": 235,
+      "rentalYield": 10.49,
       "strMetrics": {
-        "averageDailyRate": 190,
-        "occupancyRate": 60.7,
-        "revPAR": 115,
-        "annualRevenue": 42064,
-        "seasonalityScore": 6.6
+        "averageDailyRate": 166,
+        "occupancyRate": 56.8,
+        "revPAR": 95,
+        "annualRevenue": 34542,
+        "seasonalityScore": 6.4
       }
     },
     {
       "id": "atlanta",
       "name": "Atlanta",
       "state": "GA",
-      "priceChange": 7.1,
-      "medianPrice": 395000,
+      "priceChange": -2.3,
+      "medianPrice": 385000,
       "volume": 12100,
       "inventory": 18600,
       "daysOnMarket": 33,
       "priceChangeByPeriod": {
-        "3M": 7.1,
-        "1Y": 9.6,
-        "2Y": 17.9,
-        "5Y": 52.5,
-        "10Y": 105.2
+        "3M": -2.3,
+        "1Y": -3.4,
+        "2Y": -6.5,
+        "5Y": -18.7,
+        "10Y": -31.2
       },
-      "pricePerSqft": 190,
-      "rentalYield": 13.06,
+      "pricePerSqft": 207,
+      "rentalYield": 12.55,
       "strMetrics": {
-        "averageDailyRate": 132,
-        "occupancyRate": 64.2,
-        "revPAR": 85,
-        "annualRevenue": 31051,
-        "seasonalityScore": 6.8
+        "averageDailyRate": 136,
+        "occupancyRate": 66.6,
+        "revPAR": 90,
+        "annualRevenue": 33028,
+        "seasonalityScore": 6.6
       }
     },
     {
       "id": "miami",
       "name": "Miami",
       "state": "FL",
-      "priceChange": 0.8,
-      "medianPrice": 545000,
+      "priceChange": -3.5,
+      "medianPrice": 550000,
       "volume": 10200,
       "inventory": 15800,
       "daysOnMarket": 52,
       "priceChangeByPeriod": {
-        "3M": 0.8,
-        "1Y": 0.9,
-        "2Y": 1.8,
-        "5Y": 4.3,
-        "10Y": 7
+        "3M": -3.5,
+        "1Y": -4.7,
+        "2Y": -8.7,
+        "5Y": -24.3,
+        "10Y": -40.6
       },
-      "pricePerSqft": 263,
-      "rentalYield": 9.46,
+      "pricePerSqft": 300,
+      "rentalYield": 8.83,
       "strMetrics": {
-        "averageDailyRate": 207,
-        "occupancyRate": 66.9,
-        "revPAR": 138,
-        "annualRevenue": 50522,
-        "seasonalityScore": 9
+        "averageDailyRate": 225,
+        "occupancyRate": 71.4,
+        "revPAR": 161,
+        "annualRevenue": 58757,
+        "seasonalityScore": 7.3
       }
     },
     {
       "id": "tampa",
       "name": "Tampa",
       "state": "FL",
-      "priceChange": 1.9,
-      "medianPrice": 425000,
+      "priceChange": 1.3,
+      "medianPrice": 385000,
       "volume": 9600,
       "inventory": 16300,
       "daysOnMarket": 45,
       "priceChangeByPeriod": {
-        "3M": 1.9,
-        "1Y": 2.7,
-        "2Y": 5.9,
-        "5Y": 12.1,
-        "10Y": 19.9
+        "3M": 1.3,
+        "1Y": 2.2,
+        "2Y": 4.7,
+        "5Y": 9.6,
+        "10Y": 19.4
       },
-      "pricePerSqft": 195,
-      "rentalYield": 12.29,
+      "pricePerSqft": 178,
+      "rentalYield": 13.61,
       "strMetrics": {
-        "averageDailyRate": 177,
-        "occupancyRate": 63.8,
-        "revPAR": 113,
-        "annualRevenue": 41260,
-        "seasonalityScore": 4.1
+        "averageDailyRate": 172,
+        "occupancyRate": 56,
+        "revPAR": 96,
+        "annualRevenue": 35122,
+        "seasonalityScore": 5.9
       }
     },
     {
       "id": "orlando",
       "name": "Orlando",
       "state": "FL",
-      "priceChange": 2.1,
-      "medianPrice": 395000,
+      "priceChange": -1.2,
+      "medianPrice": 400000,
       "volume": 8700,
       "inventory": 15700,
       "daysOnMarket": 42,
       "priceChangeByPeriod": {
-        "3M": 2.1,
-        "1Y": 3.1,
-        "2Y": 6.2,
-        "5Y": 13.2,
-        "10Y": 26
+        "3M": -1.2,
+        "1Y": -1.6,
+        "2Y": -3.1,
+        "5Y": -8.6,
+        "10Y": -15.9
       },
-      "pricePerSqft": 203,
-      "rentalYield": 12.07,
+      "pricePerSqft": 206,
+      "rentalYield": 11.65,
       "strMetrics": {
-        "averageDailyRate": 170,
-        "occupancyRate": 73.4,
-        "revPAR": 124,
-        "annualRevenue": 45432,
-        "seasonalityScore": 8.4
+        "averageDailyRate": 136,
+        "occupancyRate": 76.4,
+        "revPAR": 104,
+        "annualRevenue": 37902,
+        "seasonalityScore": 7.5
       }
     },
     {
       "id": "raleigh",
       "name": "Raleigh",
       "state": "NC",
-      "priceChange": 5.6,
-      "medianPrice": 445000,
+      "priceChange": -2.3,
+      "medianPrice": 430000,
       "volume": 6400,
       "inventory": 13800,
       "daysOnMarket": 38,
       "priceChangeByPeriod": {
-        "3M": 5.6,
-        "1Y": 7.9,
-        "2Y": 16.1,
-        "5Y": 32.5,
-        "10Y": 60.7
+        "3M": -2.3,
+        "1Y": -3.8,
+        "2Y": -7.6,
+        "5Y": -17,
+        "10Y": -27.9
       },
-      "pricePerSqft": 203,
-      "rentalYield": 11.24,
+      "pricePerSqft": 224,
+      "rentalYield": 11.73,
       "strMetrics": {
-        "averageDailyRate": 192,
-        "occupancyRate": 66.4,
-        "revPAR": 128,
-        "annualRevenue": 46617,
-        "seasonalityScore": 6.9
+        "averageDailyRate": 158,
+        "occupancyRate": 65.9,
+        "revPAR": 104,
+        "annualRevenue": 38049,
+        "seasonalityScore": 4.1
       }
     },
     {
       "id": "las-vegas",
       "name": "Las Vegas",
       "state": "NV",
-      "priceChange": 9.7,
-      "medianPrice": 465000,
+      "priceChange": 1.4,
+      "medianPrice": 445000,
       "volume": 7900,
       "inventory": 14600,
       "daysOnMarket": 31,
       "priceChangeByPeriod": {
-        "3M": 9.7,
-        "1Y": 14.6,
-        "2Y": 30.8,
-        "5Y": 75,
-        "10Y": 137.2
+        "3M": 1.4,
+        "1Y": 1.8,
+        "2Y": 3.9,
+        "5Y": 8.7,
+        "10Y": 17.5
       },
-      "pricePerSqft": 250,
-      "rentalYield": 11.02,
+      "pricePerSqft": 218,
+      "rentalYield": 10.75,
       "strMetrics": {
-        "averageDailyRate": 195,
-        "occupancyRate": 67,
-        "revPAR": 131,
-        "annualRevenue": 47797,
-        "seasonalityScore": 8.8
+        "averageDailyRate": 173,
+        "occupancyRate": 67.2,
+        "revPAR": 116,
+        "annualRevenue": 42368,
+        "seasonalityScore": 8.6
       }
     }
   ],
-  "lastUpdated": "2026-01-21T00:00:00Z"
+  "lastUpdated": "2026-01-21T23:30:37.256Z"
 }
