@@ -18,20 +18,26 @@ export function getLastUpdated(): string {
   return metrosData.lastUpdated;
 }
 
-// Clean, modern color system for price changes
+// Clean, modern color system for price changes - ALL TEXT DARK FOR READABILITY
 export function getPriceChangeColor(priceChange: number): string {
-  if (priceChange >= 10) return "bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-emerald-200";
-  if (priceChange >= 7) return "bg-gradient-to-br from-emerald-400 to-emerald-500 text-white shadow-emerald-100";
-  if (priceChange >= 5) return "bg-gradient-to-br from-green-400 to-green-500 text-white shadow-green-100";
-  if (priceChange >= 3) return "bg-gradient-to-br from-green-300 to-green-400 text-gray-900";
-  if (priceChange >= 1) return "bg-gradient-to-br from-green-200 to-green-300 text-gray-900";
-  if (priceChange > 0) return "bg-gradient-to-br from-green-100 to-green-200 text-gray-900";
-  if (priceChange === 0) return "bg-gradient-to-br from-gray-100 to-gray-200 text-gray-900";
-  if (priceChange > -1) return "bg-gradient-to-br from-yellow-100 to-yellow-200 text-gray-900";
-  if (priceChange > -3) return "bg-gradient-to-br from-orange-200 to-orange-300 text-gray-900";
-  if (priceChange > -5) return "bg-gradient-to-br from-orange-300 to-orange-400 text-gray-900";
-  if (priceChange > -7) return "bg-gradient-to-br from-red-400 to-red-500 text-white shadow-red-100";
-  return "bg-gradient-to-br from-red-500 to-red-600 text-white shadow-red-200";
+  // Strong positive - darker backgrounds with white text
+  if (priceChange >= 10) return "bg-emerald-600 text-white shadow-lg";
+  if (priceChange >= 7) return "bg-emerald-500 text-white shadow-lg";
+  if (priceChange >= 5) return "bg-emerald-400 text-gray-900 shadow-md";
+  // Moderate positive - light backgrounds with dark text
+  if (priceChange >= 3) return "bg-emerald-300 text-gray-900 shadow-md";
+  if (priceChange >= 1) return "bg-green-200 text-gray-900 shadow-sm";
+  if (priceChange > 0) return "bg-green-100 text-gray-900 shadow-sm";
+  // Neutral
+  if (priceChange === 0) return "bg-gray-200 text-gray-900 shadow-sm";
+  // Slight negative
+  if (priceChange > -1) return "bg-orange-100 text-gray-900 shadow-sm";
+  if (priceChange > -3) return "bg-orange-200 text-gray-900 shadow-sm";
+  // Moderate negative
+  if (priceChange > -5) return "bg-orange-300 text-gray-900 shadow-md";
+  if (priceChange > -7) return "bg-red-400 text-gray-900 shadow-md";
+  // Strong negative - darker backgrounds with white text
+  return "bg-red-500 text-white shadow-lg";
 }
 
 // Simpler color for badges
