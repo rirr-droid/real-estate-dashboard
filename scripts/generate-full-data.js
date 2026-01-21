@@ -64,7 +64,7 @@ function calculateRentalYield(medianPrice, location) {
   return parseFloat((baseYield + (Math.random() - 0.5) * 2).toFixed(2));
 }
 
-// Generate submarkets for each metro
+// Generate submarkets for each metro - ALL METROS COVERED
 const submarketsByMetro = {
   'nyc': ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island'],
   'la': ['Santa Monica', 'West LA', 'Pasadena', 'Long Beach', 'Beverly Hills'],
@@ -80,7 +80,7 @@ const submarketsByMetro = {
   'jacksonville': ['Riverside', 'San Marco', 'Beaches', 'Mandarin', 'Southside'],
   'columbus': ['Short North', 'German Village', 'Grandview', 'Clintonville', 'Arena District'],
   'charlotte': ['Uptown', 'Dilworth', 'South End', 'Plaza Midwood', 'Myers Park'],
-  'seattle': ['Capitol Hill', 'Ballard', 'Fremont', 'Queen Anne', 'Wallingford'],
+  'seattle': ['Capitol Hill', 'Ballard', 'Fremont', 'Queen Anne', 'Kirkland'],
   'denver': ['LoDo', 'Cherry Creek', 'Highlands', 'RiNo', 'Washington Park'],
   'boston': ['Back Bay', 'Beacon Hill', 'South End', 'Cambridge', 'Brookline'],
   'nashville': ['The Gulch', 'East Nashville', 'Germantown', '12 South', 'Green Hills'],
