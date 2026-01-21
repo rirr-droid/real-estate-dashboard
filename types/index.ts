@@ -8,6 +8,14 @@ export interface PriceChangeByPeriod {
   "10Y": number;
 }
 
+export interface STRMetrics {
+  averageDailyRate: number;
+  occupancyRate: number;
+  revPAR: number; // Revenue per available room
+  annualRevenue: number;
+  seasonalityScore: number; // 1-10, higher = more seasonal
+}
+
 export interface Submarket {
   id: string;
   name: string;
@@ -15,9 +23,12 @@ export interface Submarket {
   priceChange: number;
   priceChangeByPeriod: PriceChangeByPeriod;
   medianPrice: number;
+  pricePerSqft: number;
   volume: number;
   inventory: number;
   daysOnMarket: number;
+  rentalYield: number;
+  strMetrics: STRMetrics;
 }
 
 export interface Metro {
@@ -27,9 +38,12 @@ export interface Metro {
   priceChange: number;
   priceChangeByPeriod: PriceChangeByPeriod;
   medianPrice: number;
+  pricePerSqft: number;
   volume: number;
   inventory: number;
   daysOnMarket: number;
+  rentalYield: number;
+  strMetrics: STRMetrics;
   submarkets?: Submarket[];
 }
 

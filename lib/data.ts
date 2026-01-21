@@ -18,27 +18,29 @@ export function getLastUpdated(): string {
   return metrosData.lastUpdated;
 }
 
-// Color scale for price changes (Finviz-style with subtle gradients)
+// Clean, modern color system for price changes
 export function getPriceChangeColor(priceChange: number): string {
-  // Strong positive
-  if (priceChange >= 10) return "bg-emerald-600 text-white";
-  if (priceChange >= 7) return "bg-emerald-500 text-white";
-  if (priceChange >= 5) return "bg-emerald-400 text-gray-900";
-  // Moderate positive
-  if (priceChange >= 3) return "bg-teal-300 text-gray-900";
-  if (priceChange >= 1) return "bg-teal-200 text-gray-900";
-  // Slight positive
-  if (priceChange > 0) return "bg-teal-100 text-gray-900";
-  // Neutral
-  if (priceChange === 0) return "bg-gray-200 text-gray-900";
-  // Slight negative
-  if (priceChange > -1) return "bg-orange-100 text-gray-900";
-  if (priceChange > -3) return "bg-orange-200 text-gray-900";
-  // Moderate negative
-  if (priceChange > -5) return "bg-orange-300 text-gray-900";
-  // Strong negative
-  if (priceChange > -7) return "bg-red-400 text-gray-900";
-  return "bg-red-500 text-white";
+  if (priceChange >= 10) return "bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-emerald-200";
+  if (priceChange >= 7) return "bg-gradient-to-br from-emerald-400 to-emerald-500 text-white shadow-emerald-100";
+  if (priceChange >= 5) return "bg-gradient-to-br from-green-400 to-green-500 text-white shadow-green-100";
+  if (priceChange >= 3) return "bg-gradient-to-br from-green-300 to-green-400 text-gray-900";
+  if (priceChange >= 1) return "bg-gradient-to-br from-green-200 to-green-300 text-gray-900";
+  if (priceChange > 0) return "bg-gradient-to-br from-green-100 to-green-200 text-gray-900";
+  if (priceChange === 0) return "bg-gradient-to-br from-gray-100 to-gray-200 text-gray-900";
+  if (priceChange > -1) return "bg-gradient-to-br from-yellow-100 to-yellow-200 text-gray-900";
+  if (priceChange > -3) return "bg-gradient-to-br from-orange-200 to-orange-300 text-gray-900";
+  if (priceChange > -5) return "bg-gradient-to-br from-orange-300 to-orange-400 text-gray-900";
+  if (priceChange > -7) return "bg-gradient-to-br from-red-400 to-red-500 text-white shadow-red-100";
+  return "bg-gradient-to-br from-red-500 to-red-600 text-white shadow-red-200";
+}
+
+// Simpler color for badges
+export function getBadgeColor(priceChange: number): "green" | "emerald" | "yellow" | "orange" | "red" {
+  if (priceChange >= 5) return "green";
+  if (priceChange >= 0) return "emerald";
+  if (priceChange >= -3) return "yellow";
+  if (priceChange >= -7) return "orange";
+  return "red";
 }
 
 export function formatCurrency(value: number): string {
@@ -57,4 +59,24 @@ export function formatPercent(value: number): string {
 
 export function formatNumber(value: number): string {
   return new Intl.NumberFormat("en-US").format(value);
+}
+
+// Get top performing metros
+export function getTopPerformers(metros: Metro[], count: number = 5): Metro[] {
+  return [...metros].sort((a, b) => b.priceChangeByPeriod["1Y"] - a.priceChangeByPeriod["1Y"]).slice(0, count);
+}
+
+// Get bottom performing metros
+export function getBottomPerformers(metros: Metro[], count: number = 5): Metro[] {
+  return [...metros].sort((a, b) => a.priceChangeByPeriod["1Y"] - b.priceChangeByPeriod["1Y"]).slice(0, count);
+}
+
+// Get best STR markets by RevPAR
+export function getBestSTRMarkets(metros: Metro[], count: number = 5): Metro[] {
+  return [...metros].sort((a, b) => b.strMetrics.revPAR - a.strMetrics.revPAR).slice(0, count);
+}
+
+// Get best rental yield markets
+export function getBestRentalYields(metros: Metro[], count: number = 5): Metro[] {
+  return [...metros].sort((a, b) => b.rentalYield - a.rentalYield).slice(0, count);
 }

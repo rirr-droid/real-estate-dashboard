@@ -12,22 +12,19 @@ import {
   Badge,
   TextInput,
 } from "@tremor/react";
-import { formatCurrency, formatPercent, formatNumber } from "@/lib/data";
+import { formatCurrency, formatPercent, formatNumber, getBadgeColor } from "@/lib/data";
 import Link from "next/link";
 
 interface MetroTableProps {
   metros: Metro[];
 }
 
-type SortField = keyof Metro;
-type SortDirection = "asc" | "desc";
-
 export default function MetroTable({ metros }: MetroTableProps) {
-  const [sortField, setSortField] = useState<SortField>("priceChange");
-  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const [sortField, setSortField] = useState<string>("priceChange");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
   const [filter, setFilter] = useState("");
 
-  const handleSort = (field: SortField) => {
+  const handleSort = (field: string) => {
     if (sortField === field) {
       setSortDirection(sortDirection === "asc" ? "desc" : "asc");
     } else {
@@ -49,8 +46,28 @@ export default function MetroTable({ metros }: MetroTableProps) {
     }
 
     return [...filtered].sort((a, b) => {
-      const aVal = a[sortField];
-      const bVal = b[sortField];
+      let aVal: number | string;
+      let bVal: number | string;
+
+      // Handle nested properties
+      if (sortField === "rentalYield") {
+        aVal = a.rentalYield;
+        bVal = b.rentalYield;
+      } else if (sortField === "pricePerSqft") {
+        aVal = a.pricePerSqft;
+        bVal = b.pricePerSqft;
+      } else if (sortField === "revPAR") {
+        aVal = a.strMetrics.revPAR;
+        bVal = b.strMetrics.revPAR;
+      } else if (sortField === "occupancy") {
+        aVal = a.strMetrics.occupancyRate;
+        bVal = b.strMetrics.occupancyRate;
+      } else {
+        const val = a[sortField as keyof Metro];
+        aVal = typeof val === 'number' || typeof val === 'string' ? val : 0;
+        const val2 = b[sortField as keyof Metro];
+        bVal = typeof val2 === 'number' || typeof val2 === 'string' ? val2 : 0;
+      }
 
       if (typeof aVal === "number" && typeof bVal === "number") {
         return sortDirection === "asc" ? aVal - bVal : bVal - aVal;
@@ -66,24 +83,31 @@ export default function MetroTable({ metros }: MetroTableProps) {
     });
   }, [metros, sortField, sortDirection, filter]);
 
-  const getPriceChangeBadgeColor = (priceChange: number) => {
-    if (priceChange >= 5) return "green";
-    if (priceChange >= 0) return "emerald";
-    if (priceChange >= -3) return "orange";
-    return "red";
-  };
+  const SortHeader = ({ field, label }: { field: string; label: string }) => (
+    <TableHeaderCell
+      className="cursor-pointer hover:bg-gray-50 font-semibold"
+      onClick={() => handleSort(field)}
+    >
+      <div className="flex items-center gap-1">
+        {label}
+        {sortField === field && (
+          <span className="text-xs">{sortDirection === "asc" ? "↑" : "↓"}</span>
+        )}
+      </div>
+    </TableHeaderCell>
+  );
 
   return (
     <div className="space-y-4">
-      <div className="flex gap-4 items-center">
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <TextInput
           placeholder="Search metros..."
           value={filter}
           onValueChange={setFilter}
           className="max-w-sm"
         />
-        <div className="text-sm text-gray-500">
-          {filteredAndSortedMetros.length} metros
+        <div className="text-sm text-gray-600">
+          Showing {filteredAndSortedMetros.length} of {metros.length} markets
         </div>
       </div>
 
@@ -91,48 +115,16 @@ export default function MetroTable({ metros }: MetroTableProps) {
         <Table>
           <TableHead>
             <TableRow>
-              <TableHeaderCell
-                className="cursor-pointer hover:bg-gray-50"
-                onClick={() => handleSort("name")}
-              >
-                Metro {sortField === "name" && (sortDirection === "asc" ? "↑" : "↓")}
-              </TableHeaderCell>
-              <TableHeaderCell
-                className="cursor-pointer hover:bg-gray-50"
-                onClick={() => handleSort("state")}
-              >
-                State {sortField === "state" && (sortDirection === "asc" ? "↑" : "↓")}
-              </TableHeaderCell>
-              <TableHeaderCell
-                className="cursor-pointer hover:bg-gray-50"
-                onClick={() => handleSort("priceChange")}
-              >
-                Price Change {sortField === "priceChange" && (sortDirection === "asc" ? "↑" : "↓")}
-              </TableHeaderCell>
-              <TableHeaderCell
-                className="cursor-pointer hover:bg-gray-50"
-                onClick={() => handleSort("medianPrice")}
-              >
-                Median Price {sortField === "medianPrice" && (sortDirection === "asc" ? "↑" : "↓")}
-              </TableHeaderCell>
-              <TableHeaderCell
-                className="cursor-pointer hover:bg-gray-50"
-                onClick={() => handleSort("volume")}
-              >
-                Volume {sortField === "volume" && (sortDirection === "asc" ? "↑" : "↓")}
-              </TableHeaderCell>
-              <TableHeaderCell
-                className="cursor-pointer hover:bg-gray-50"
-                onClick={() => handleSort("inventory")}
-              >
-                Inventory {sortField === "inventory" && (sortDirection === "asc" ? "↑" : "↓")}
-              </TableHeaderCell>
-              <TableHeaderCell
-                className="cursor-pointer hover:bg-gray-50"
-                onClick={() => handleSort("daysOnMarket")}
-              >
-                Days on Market {sortField === "daysOnMarket" && (sortDirection === "asc" ? "↑" : "↓")}
-              </TableHeaderCell>
+              <SortHeader field="name" label="Metro" />
+              <SortHeader field="state" label="State" />
+              <SortHeader field="priceChange" label="1Y Change" />
+              <SortHeader field="medianPrice" label="Median Price" />
+              <SortHeader field="pricePerSqft" label="$/Sqft" />
+              <SortHeader field="rentalYield" label="Yield %" />
+              <SortHeader field="revPAR" label="STR RevPAR" />
+              <SortHeader field="occupancy" label="STR Occ%" />
+              <SortHeader field="inventory" label="Inventory" />
+              <SortHeader field="daysOnMarket" label="DOM" />
             </TableRow>
           </TableHead>
           <TableBody>
@@ -141,23 +133,32 @@ export default function MetroTable({ metros }: MetroTableProps) {
                 <TableCell>
                   <Link
                     href={`/metro/${metro.id}`}
-                    className="text-blue-600 hover:text-blue-800 hover:underline font-medium"
+                    className="text-blue-600 hover:text-blue-800 hover:underline font-semibold"
                   >
                     {metro.name}
                   </Link>
                 </TableCell>
-                <TableCell>{metro.state}</TableCell>
+                <TableCell className="text-gray-600">{metro.state}</TableCell>
                 <TableCell>
-                  <Badge color={getPriceChangeBadgeColor(metro.priceChange)}>
-                    {formatPercent(metro.priceChange)}
+                  <Badge color={getBadgeColor(metro.priceChangeByPeriod["1Y"])}>
+                    {formatPercent(metro.priceChangeByPeriod["1Y"])}
                   </Badge>
                 </TableCell>
-                <TableCell className="font-medium">
+                <TableCell className="font-semibold">
                   {formatCurrency(metro.medianPrice)}
                 </TableCell>
-                <TableCell>{formatNumber(metro.volume)}</TableCell>
-                <TableCell>{formatNumber(metro.inventory)}</TableCell>
-                <TableCell>{metro.daysOnMarket}</TableCell>
+                <TableCell className="text-gray-700">${metro.pricePerSqft}</TableCell>
+                <TableCell className="font-medium text-purple-700">
+                  {metro.rentalYield.toFixed(2)}%
+                </TableCell>
+                <TableCell className="font-semibold text-green-700">
+                  ${metro.strMetrics.revPAR}
+                </TableCell>
+                <TableCell className="text-gray-700">
+                  {metro.strMetrics.occupancyRate.toFixed(1)}%
+                </TableCell>
+                <TableCell className="text-gray-600">{formatNumber(metro.inventory)}</TableCell>
+                <TableCell className="text-gray-600">{metro.daysOnMarket}</TableCell>
               </TableRow>
             ))}
           </TableBody>

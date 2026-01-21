@@ -11,10 +11,19 @@
       "daysOnMarket": 45,
       "priceChangeByPeriod": {
         "3M": 5.2,
-        "1Y": 17.3,
-        "2Y": 30.4,
-        "5Y": 68.8,
-        "10Y": 126.1
+        "1Y": 18.8,
+        "2Y": 33.4,
+        "5Y": 74.6,
+        "10Y": 141.7
+      },
+      "pricePerSqft": 320,
+      "rentalYield": 7.11,
+      "strMetrics": {
+        "averageDailyRate": 276,
+        "occupancyRate": 53.2,
+        "revPAR": 147,
+        "annualRevenue": 53666,
+        "seasonalityScore": 5.3
       }
     },
     {
@@ -28,10 +37,19 @@
       "daysOnMarket": 38,
       "priceChangeByPeriod": {
         "3M": 3.8,
-        "1Y": 13.7,
-        "2Y": 25.1,
+        "1Y": 12.9,
+        "2Y": 24.2,
         "5Y": 56,
-        "10Y": 110.7
+        "10Y": 102.4
+      },
+      "pricePerSqft": 416,
+      "rentalYield": 6.58,
+      "strMetrics": {
+        "averageDailyRate": 321,
+        "occupancyRate": 62.1,
+        "revPAR": 199,
+        "annualRevenue": 72796,
+        "seasonalityScore": 5.4
       }
     },
     {
@@ -45,10 +63,19 @@
       "daysOnMarket": 52,
       "priceChangeByPeriod": {
         "3M": -1.2,
-        "1Y": -4.1,
-        "2Y": -6.2,
-        "5Y": -12.7,
-        "10Y": -13.3
+        "1Y": -4.6,
+        "2Y": -7.3,
+        "5Y": -15,
+        "10Y": -26.2
+      },
+      "pricePerSqft": 151,
+      "rentalYield": 15.14,
+      "strMetrics": {
+        "averageDailyRate": 156,
+        "occupancyRate": 55.6,
+        "revPAR": 87,
+        "annualRevenue": 31712,
+        "seasonalityScore": 5.6
       }
     },
     {
@@ -62,10 +89,19 @@
       "daysOnMarket": 32,
       "priceChangeByPeriod": {
         "3M": 8.5,
-        "1Y": 29.5,
-        "2Y": 53.8,
-        "5Y": 120.9,
-        "10Y": 223.4
+        "1Y": 30.2,
+        "2Y": 53.7,
+        "5Y": 122.3,
+        "10Y": 225.8
+      },
+      "pricePerSqft": 226,
+      "rentalYield": 12.06,
+      "strMetrics": {
+        "averageDailyRate": 170,
+        "occupancyRate": 62.7,
+        "revPAR": 107,
+        "annualRevenue": 39019,
+        "seasonalityScore": 6.6
       }
     },
     {
@@ -79,10 +115,19 @@
       "daysOnMarket": 35,
       "priceChangeByPeriod": {
         "3M": 7.3,
-        "1Y": 25.7,
-        "2Y": 47.5,
-        "5Y": 108.8,
-        "10Y": 202.1
+        "1Y": 26,
+        "2Y": 46.3,
+        "5Y": 104.8,
+        "10Y": 194.6
+      },
+      "pricePerSqft": 193,
+      "rentalYield": 12.11,
+      "strMetrics": {
+        "averageDailyRate": 143,
+        "occupancyRate": 53.4,
+        "revPAR": 77,
+        "annualRevenue": 27960,
+        "seasonalityScore": 4.1
       }
     },
     {
@@ -96,10 +141,19 @@
       "daysOnMarket": 28,
       "priceChangeByPeriod": {
         "3M": 12.4,
-        "1Y": 43.1,
-        "2Y": 76.9,
-        "5Y": 173.1,
-        "10Y": 313.8
+        "1Y": 43.8,
+        "2Y": 78.3,
+        "5Y": 176,
+        "10Y": 325.3
+      },
+      "pricePerSqft": 247,
+      "rentalYield": 10.93,
+      "strMetrics": {
+        "averageDailyRate": 204,
+        "occupancyRate": 56.1,
+        "revPAR": 114,
+        "annualRevenue": 41723,
+        "seasonalityScore": 7
       }
     },
     {
@@ -113,10 +167,19 @@
       "daysOnMarket": 48,
       "priceChangeByPeriod": {
         "3M": 2.1,
-        "1Y": 8.1,
-        "2Y": 14.7,
-        "5Y": 34.9,
-        "10Y": 72.1
+        "1Y": 7.9,
+        "2Y": 15,
+        "5Y": 35,
+        "10Y": 71.9
+      },
+      "pricePerSqft": 161,
+      "rentalYield": 14.29,
+      "strMetrics": {
+        "averageDailyRate": 159,
+        "occupancyRate": 64.7,
+        "revPAR": 103,
+        "annualRevenue": 37521,
+        "seasonalityScore": 5.1
       }
     },
     {
@@ -130,10 +193,19 @@
       "daysOnMarket": 36,
       "priceChangeByPeriod": {
         "3M": 6.9,
-        "1Y": 25.1,
-        "2Y": 43.7,
-        "5Y": 96.6,
-        "10Y": 181.9
+        "1Y": 24,
+        "2Y": 43.3,
+        "5Y": 96.2,
+        "10Y": 174.7
+      },
+      "pricePerSqft": 144,
+      "rentalYield": 15.59,
+      "strMetrics": {
+        "averageDailyRate": 152,
+        "occupancyRate": 59.1,
+        "revPAR": 90,
+        "annualRevenue": 32734,
+        "seasonalityScore": 4.5
       }
     },
     {
@@ -147,10 +219,19 @@
       "daysOnMarket": 41,
       "priceChangeByPeriod": {
         "3M": 4.2,
-        "1Y": 14.6,
-        "2Y": 26.7,
-        "5Y": 62.5,
-        "10Y": 120.6
+        "1Y": 15.1,
+        "2Y": 28,
+        "5Y": 65.3,
+        "10Y": 123.4
+      },
+      "pricePerSqft": 496,
+      "rentalYield": 4.7,
+      "strMetrics": {
+        "averageDailyRate": 337,
+        "occupancyRate": 58.8,
+        "revPAR": 198,
+        "annualRevenue": 72408,
+        "seasonalityScore": 6.9
       }
     },
     {
@@ -164,10 +245,19 @@
       "daysOnMarket": 58,
       "priceChangeByPeriod": {
         "3M": -3.5,
-        "1Y": -12.1,
-        "2Y": -22.2,
-        "5Y": -44.5,
-        "10Y": -75.6
+        "1Y": -11.7,
+        "2Y": -20.9,
+        "5Y": -45.8,
+        "10Y": -82.2
+      },
+      "pricePerSqft": 275,
+      "rentalYield": 9.36,
+      "strMetrics": {
+        "averageDailyRate": 219,
+        "occupancyRate": 63.7,
+        "revPAR": 140,
+        "annualRevenue": 50924,
+        "seasonalityScore": 6.5
       }
     },
     {
@@ -181,10 +271,19 @@
       "daysOnMarket": 43,
       "priceChangeByPeriod": {
         "3M": 1.8,
-        "1Y": 6,
-        "2Y": 11.8,
-        "5Y": 27,
-        "10Y": 58.5
+        "1Y": 6.2,
+        "2Y": 11.9,
+        "5Y": 27.6,
+        "10Y": 53.9
+      },
+      "pricePerSqft": 659,
+      "rentalYield": 3.42,
+      "strMetrics": {
+        "averageDailyRate": 487,
+        "occupancyRate": 56.7,
+        "revPAR": 276,
+        "annualRevenue": 100780,
+        "seasonalityScore": 5.5
       }
     },
     {
@@ -198,10 +297,19 @@
       "daysOnMarket": 31,
       "priceChangeByPeriod": {
         "3M": 9.2,
-        "1Y": 32,
-        "2Y": 56.8,
-        "5Y": 129.4,
-        "10Y": 233.7
+        "1Y": 33.2,
+        "2Y": 59,
+        "5Y": 133.3,
+        "10Y": 243
+      },
+      "pricePerSqft": 182,
+      "rentalYield": 13.64,
+      "strMetrics": {
+        "averageDailyRate": 165,
+        "occupancyRate": 56.9,
+        "revPAR": 94,
+        "annualRevenue": 34317,
+        "seasonalityScore": 6
       }
     },
     {
@@ -215,10 +323,19 @@
       "daysOnMarket": 39,
       "priceChangeByPeriod": {
         "3M": 4.7,
-        "1Y": 16.1,
-        "2Y": 29,
-        "5Y": 67.3,
-        "10Y": 127.1
+        "1Y": 16,
+        "2Y": 27.3,
+        "5Y": 61.3,
+        "10Y": 118.3
+      },
+      "pricePerSqft": 149,
+      "rentalYield": 16.76,
+      "strMetrics": {
+        "averageDailyRate": 122,
+        "occupancyRate": 62.3,
+        "revPAR": 76,
+        "annualRevenue": 27732,
+        "seasonalityScore": 6.9
       }
     },
     {
@@ -232,10 +349,19 @@
       "daysOnMarket": 34,
       "priceChangeByPeriod": {
         "3M": 6.3,
-        "1Y": 22.5,
-        "2Y": 39.9,
-        "5Y": 89.3,
-        "10Y": 165.2
+        "1Y": 21.2,
+        "2Y": 38.1,
+        "5Y": 87.6,
+        "10Y": 162.2
+      },
+      "pricePerSqft": 217,
+      "rentalYield": 12.21,
+      "strMetrics": {
+        "averageDailyRate": 154,
+        "occupancyRate": 66.8,
+        "revPAR": 103,
+        "annualRevenue": 37578,
+        "seasonalityScore": 4.9
       }
     },
     {
@@ -249,10 +375,19 @@
       "daysOnMarket": 55,
       "priceChangeByPeriod": {
         "3M": -2.1,
-        "1Y": -7.7,
-        "2Y": -12.9,
-        "5Y": -26.3,
-        "10Y": -38.5
+        "1Y": -8,
+        "2Y": -13,
+        "5Y": -28.4,
+        "10Y": -46.4
+      },
+      "pricePerSqft": 409,
+      "rentalYield": 6.03,
+      "strMetrics": {
+        "averageDailyRate": 269,
+        "occupancyRate": 60.2,
+        "revPAR": 162,
+        "annualRevenue": 59067,
+        "seasonalityScore": 4
       }
     },
     {
@@ -266,10 +401,19 @@
       "daysOnMarket": 46,
       "priceChangeByPeriod": {
         "3M": 0.8,
-        "1Y": 2.6,
-        "2Y": 5.4,
-        "5Y": 15.8,
-        "10Y": 34.1
+        "1Y": 3.8,
+        "2Y": 5.3,
+        "5Y": 13.3,
+        "10Y": 28.6
+      },
+      "pricePerSqft": 335,
+      "rentalYield": 8.76,
+      "strMetrics": {
+        "averageDailyRate": 222,
+        "occupancyRate": 64.8,
+        "revPAR": 144,
+        "annualRevenue": 52413,
+        "seasonalityScore": 4.6
       }
     },
     {
@@ -283,10 +427,19 @@
       "daysOnMarket": 42,
       "priceChangeByPeriod": {
         "3M": 3.4,
-        "1Y": 11.5,
-        "2Y": 20.7,
-        "5Y": 47.3,
-        "10Y": 90.2
+        "1Y": 12.1,
+        "2Y": 21.3,
+        "5Y": 49.2,
+        "10Y": 91.7
+      },
+      "pricePerSqft": 365,
+      "rentalYield": 7.73,
+      "strMetrics": {
+        "averageDailyRate": 279,
+        "occupancyRate": 61.9,
+        "revPAR": 172,
+        "annualRevenue": 62950,
+        "seasonalityScore": 5.1
       }
     },
     {
@@ -300,10 +453,19 @@
       "daysOnMarket": 37,
       "priceChangeByPeriod": {
         "3M": 5.9,
-        "1Y": 21.4,
-        "2Y": 37.3,
-        "5Y": 86.9,
-        "10Y": 162.8
+        "1Y": 19.9,
+        "2Y": 36.6,
+        "5Y": 81.3,
+        "10Y": 151.1
+      },
+      "pricePerSqft": 230,
+      "rentalYield": 9.83,
+      "strMetrics": {
+        "averageDailyRate": 198,
+        "occupancyRate": 57.3,
+        "revPAR": 114,
+        "annualRevenue": 41450,
+        "seasonalityScore": 6.7
       }
     },
     {
@@ -317,10 +479,19 @@
       "daysOnMarket": 33,
       "priceChangeByPeriod": {
         "3M": 7.1,
-        "1Y": 25.1,
-        "2Y": 45.4,
-        "5Y": 102.8,
-        "10Y": 193.6
+        "1Y": 24.3,
+        "2Y": 43.9,
+        "5Y": 100.7,
+        "10Y": 189.9
+      },
+      "pricePerSqft": 208,
+      "rentalYield": 13.64,
+      "strMetrics": {
+        "averageDailyRate": 154,
+        "occupancyRate": 61.2,
+        "revPAR": 94,
+        "annualRevenue": 34379,
+        "seasonalityScore": 6.9
       }
     },
     {
@@ -334,10 +505,19 @@
       "daysOnMarket": 29,
       "priceChangeByPeriod": {
         "3M": 11.3,
-        "1Y": 39.4,
-        "2Y": 71.4,
-        "5Y": 157.2,
-        "10Y": 288.3
+        "1Y": 38.9,
+        "2Y": 70,
+        "5Y": 154,
+        "10Y": 280.2
+      },
+      "pricePerSqft": 275,
+      "rentalYield": 9.65,
+      "strMetrics": {
+        "averageDailyRate": 190,
+        "occupancyRate": 63.5,
+        "revPAR": 120,
+        "annualRevenue": 43921,
+        "seasonalityScore": 8.7
       }
     },
     {
@@ -351,10 +531,19 @@
       "daysOnMarket": 30,
       "priceChangeByPeriod": {
         "3M": 10.8,
-        "1Y": 37,
-        "2Y": 67.6,
-        "5Y": 152.6,
-        "10Y": 274.8
+        "1Y": 37.8,
+        "2Y": 67.1,
+        "5Y": 148.6,
+        "10Y": 271.4
+      },
+      "pricePerSqft": 213,
+      "rentalYield": 10.85,
+      "strMetrics": {
+        "averageDailyRate": 187,
+        "occupancyRate": 66.8,
+        "revPAR": 125,
+        "annualRevenue": 45465,
+        "seasonalityScore": 4.4
       }
     },
     {
@@ -368,10 +557,19 @@
       "daysOnMarket": 32,
       "priceChangeByPeriod": {
         "3M": 8.9,
-        "1Y": 31.4,
-        "2Y": 55.8,
+        "1Y": 31.3,
+        "2Y": 56.3,
         "5Y": 126.4,
-        "10Y": 235.3
+        "10Y": 236.5
+      },
+      "pricePerSqft": 196,
+      "rentalYield": 12.2,
+      "strMetrics": {
+        "averageDailyRate": 179,
+        "occupancyRate": 62.7,
+        "revPAR": 112,
+        "annualRevenue": 41030,
+        "seasonalityScore": 7.8
       }
     },
     {
@@ -385,10 +583,19 @@
       "daysOnMarket": 38,
       "priceChangeByPeriod": {
         "3M": 5.6,
-        "1Y": 20,
-        "2Y": 35.6,
-        "5Y": 79.7,
-        "10Y": 145.8
+        "1Y": 19.6,
+        "2Y": 35.4,
+        "5Y": 81.8,
+        "10Y": 155
+      },
+      "pricePerSqft": 205,
+      "rentalYield": 11.39,
+      "strMetrics": {
+        "averageDailyRate": 197,
+        "occupancyRate": 54.3,
+        "revPAR": 107,
+        "annualRevenue": 38943,
+        "seasonalityScore": 5.2
       }
     },
     {
@@ -402,10 +609,19 @@
       "daysOnMarket": 31,
       "priceChangeByPeriod": {
         "3M": 9.7,
-        "1Y": 34.5,
-        "2Y": 61.6,
+        "1Y": 33.8,
+        "2Y": 60.9,
         "5Y": 138.2,
         "10Y": 252.8
+      },
+      "pricePerSqft": 253,
+      "rentalYield": 9.78,
+      "strMetrics": {
+        "averageDailyRate": 199,
+        "occupancyRate": 72.2,
+        "revPAR": 144,
+        "annualRevenue": 52427,
+        "seasonalityScore": 7.5
       }
     }
   ],
