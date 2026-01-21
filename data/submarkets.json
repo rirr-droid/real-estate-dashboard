@@ -8,7 +8,14 @@
       "medianPrice": 1250000,
       "volume": 3200,
       "inventory": 5800,
-      "daysOnMarket": 38
+      "daysOnMarket": 38,
+      "priceChangeByPeriod": {
+        "3M": 6.8,
+        "1Y": 24.7,
+        "2Y": 44.6,
+        "5Y": 102.4,
+        "10Y": 185.2
+      }
     },
     {
       "id": "nyc-brooklyn",
@@ -18,7 +25,14 @@
       "medianPrice": 925000,
       "volume": 4100,
       "inventory": 7200,
-      "daysOnMarket": 42
+      "daysOnMarket": 42,
+      "priceChangeByPeriod": {
+        "3M": 5.4,
+        "1Y": 19.6,
+        "2Y": 36.4,
+        "5Y": 84.1,
+        "10Y": 157.3
+      }
     },
     {
       "id": "nyc-queens",
@@ -28,7 +42,14 @@
       "medianPrice": 685000,
       "volume": 3800,
       "inventory": 6900,
-      "daysOnMarket": 48
+      "daysOnMarket": 48,
+      "priceChangeByPeriod": {
+        "3M": 4.1,
+        "1Y": 14.8,
+        "2Y": 26.7,
+        "5Y": 61.4,
+        "10Y": 117.9
+      }
     },
     {
       "id": "nyc-bronx",
@@ -38,7 +59,14 @@
       "medianPrice": 485000,
       "volume": 1350,
       "inventory": 3500,
-      "daysOnMarket": 51
+      "daysOnMarket": 51,
+      "priceChangeByPeriod": {
+        "3M": 3.2,
+        "1Y": 10.9,
+        "2Y": 19.7,
+        "5Y": 46.5,
+        "10Y": 92.7
+      }
     },
     {
       "id": "la-west-la",
@@ -48,7 +76,14 @@
       "medianPrice": 1650000,
       "volume": 1800,
       "inventory": 3200,
-      "daysOnMarket": 34
+      "daysOnMarket": 34,
+      "priceChangeByPeriod": {
+        "3M": 5.2,
+        "1Y": 18.9,
+        "2Y": 35.4,
+        "5Y": 82.7,
+        "10Y": 152.9
+      }
     },
     {
       "id": "la-santa-monica",
@@ -58,7 +93,14 @@
       "medianPrice": 1950000,
       "volume": 850,
       "inventory": 1500,
-      "daysOnMarket": 36
+      "daysOnMarket": 36,
+      "priceChangeByPeriod": {
+        "3M": 4.8,
+        "1Y": 17.3,
+        "2Y": 30.4,
+        "5Y": 69.5,
+        "10Y": 133.4
+      }
     },
     {
       "id": "la-pasadena",
@@ -68,7 +110,14 @@
       "medianPrice": 1025000,
       "volume": 1450,
       "inventory": 2800,
-      "daysOnMarket": 39
+      "daysOnMarket": 39,
+      "priceChangeByPeriod": {
+        "3M": 3.2,
+        "1Y": 10.6,
+        "2Y": 18.4,
+        "5Y": 40.5,
+        "10Y": 77.5
+      }
     },
     {
       "id": "la-long-beach",
@@ -78,7 +127,14 @@
       "medianPrice": 785000,
       "volume": 2200,
       "inventory": 4100,
-      "daysOnMarket": 41
+      "daysOnMarket": 41,
+      "priceChangeByPeriod": {
+        "3M": 2.8,
+        "1Y": 10,
+        "2Y": 17.9,
+        "5Y": 43.3,
+        "10Y": 79.9
+      }
     },
     {
       "id": "la-glendale",
@@ -88,7 +144,14 @@
       "medianPrice": 925000,
       "volume": 1100,
       "inventory": 2400,
-      "daysOnMarket": 38
+      "daysOnMarket": 38,
+      "priceChangeByPeriod": {
+        "3M": 3.5,
+        "1Y": 13.1,
+        "2Y": 22.2,
+        "5Y": 52.1,
+        "10Y": 94.5
+      }
     },
     {
       "id": "dallas-uptown",
@@ -98,7 +161,14 @@
       "medianPrice": 625000,
       "volume": 2400,
       "inventory": 3100,
-      "daysOnMarket": 28
+      "daysOnMarket": 28,
+      "priceChangeByPeriod": {
+        "3M": 10.2,
+        "1Y": 36.6,
+        "2Y": 67.3,
+        "5Y": 149.6,
+        "10Y": 277.5
+      }
     },
     {
       "id": "dallas-plano",
@@ -108,7 +178,14 @@
       "medianPrice": 485000,
       "volume": 3800,
       "inventory": 4900,
-      "daysOnMarket": 30
+      "daysOnMarket": 30,
+      "priceChangeByPeriod": {
+        "3M": 9.8,
+        "1Y": 34.6,
+        "2Y": 60.9,
+        "5Y": 137.8,
+        "10Y": 248.9
+      }
     },
     {
       "id": "dallas-frisco",
@@ -118,7 +195,14 @@
       "medianPrice": 565000,
       "volume": 3200,
       "inventory": 4200,
-      "daysOnMarket": 26
+      "daysOnMarket": 26,
+      "priceChangeByPeriod": {
+        "3M": 11.5,
+        "1Y": 40,
+        "2Y": 73.5,
+        "5Y": 161.9,
+        "10Y": 299.8
+      }
     },
     {
       "id": "dallas-irving",
@@ -128,7 +212,14 @@
       "medianPrice": 385000,
       "volume": 2900,
       "inventory": 3800,
-      "daysOnMarket": 33
+      "daysOnMarket": 33,
+      "priceChangeByPeriod": {
+        "3M": 7.9,
+        "1Y": 27.8,
+        "2Y": 51.5,
+        "5Y": 114.5,
+        "10Y": 207.1
+      }
     },
     {
       "id": "dallas-arlington",
@@ -138,7 +229,14 @@
       "medianPrice": 345000,
       "volume": 2900,
       "inventory": 3800,
-      "daysOnMarket": 35
+      "daysOnMarket": 35,
+      "priceChangeByPeriod": {
+        "3M": 6.8,
+        "1Y": 23.7,
+        "2Y": 41.2,
+        "5Y": 92.1,
+        "10Y": 169.5
+      }
     },
     {
       "id": "phoenix-scottsdale",
@@ -148,7 +246,14 @@
       "medianPrice": 725000,
       "volume": 2800,
       "inventory": 3900,
-      "daysOnMarket": 24
+      "daysOnMarket": 24,
+      "priceChangeByPeriod": {
+        "3M": 14.2,
+        "1Y": 50,
+        "2Y": 89.8,
+        "5Y": 197.7,
+        "10Y": 359.6
+      }
     },
     {
       "id": "phoenix-tempe",
@@ -158,7 +263,14 @@
       "medianPrice": 485000,
       "volume": 2400,
       "inventory": 3200,
-      "daysOnMarket": 26
+      "daysOnMarket": 26,
+      "priceChangeByPeriod": {
+        "3M": 13.1,
+        "1Y": 46.5,
+        "2Y": 83.2,
+        "5Y": 185.7,
+        "10Y": 336.2
+      }
     },
     {
       "id": "phoenix-mesa",
@@ -168,7 +280,14 @@
       "medianPrice": 425000,
       "volume": 3100,
       "inventory": 4200,
-      "daysOnMarket": 29
+      "daysOnMarket": 29,
+      "priceChangeByPeriod": {
+        "3M": 11.8,
+        "1Y": 42.3,
+        "2Y": 77.2,
+        "5Y": 170.8,
+        "10Y": 309.1
+      }
     },
     {
       "id": "phoenix-chandler",
@@ -178,7 +297,14 @@
       "medianPrice": 525000,
       "volume": 2900,
       "inventory": 3800,
-      "daysOnMarket": 27
+      "daysOnMarket": 27,
+      "priceChangeByPeriod": {
+        "3M": 12.9,
+        "1Y": 45.8,
+        "2Y": 83.6,
+        "5Y": 184.5,
+        "10Y": 337.3
+      }
     },
     {
       "id": "miami-south-beach",
@@ -188,7 +314,14 @@
       "medianPrice": 825000,
       "volume": 1800,
       "inventory": 2600,
-      "daysOnMarket": 25
+      "daysOnMarket": 25,
+      "priceChangeByPeriod": {
+        "3M": 13.8,
+        "1Y": 47.4,
+        "2Y": 85.9,
+        "5Y": 192.1,
+        "10Y": 354.9
+      }
     },
     {
       "id": "miami-coral-gables",
@@ -198,7 +331,14 @@
       "medianPrice": 925000,
       "volume": 1500,
       "inventory": 2200,
-      "daysOnMarket": 27
+      "daysOnMarket": 27,
+      "priceChangeByPeriod": {
+        "3M": 12.1,
+        "1Y": 43,
+        "2Y": 77.2,
+        "5Y": 170.1,
+        "10Y": 314.2
+      }
     },
     {
       "id": "miami-brickell",
@@ -208,7 +348,14 @@
       "medianPrice": 685000,
       "volume": 2200,
       "inventory": 3100,
-      "daysOnMarket": 28
+      "daysOnMarket": 28,
+      "priceChangeByPeriod": {
+        "3M": 11.5,
+        "1Y": 40.7,
+        "2Y": 73.5,
+        "5Y": 163.5,
+        "10Y": 302.7
+      }
     },
     {
       "id": "miami-wynwood",
@@ -218,7 +365,14 @@
       "medianPrice": 545000,
       "volume": 1900,
       "inventory": 2800,
-      "daysOnMarket": 31
+      "daysOnMarket": 31,
+      "priceChangeByPeriod": {
+        "3M": 10.2,
+        "1Y": 36.3,
+        "2Y": 64.8,
+        "5Y": 146.4,
+        "10Y": 264.6
+      }
     }
   ]
 }

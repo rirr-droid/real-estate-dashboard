@@ -18,18 +18,27 @@ export function getLastUpdated(): string {
   return metrosData.lastUpdated;
 }
 
-// Color scale for price changes (Finviz-style)
+// Color scale for price changes (Finviz-style with subtle gradients)
 export function getPriceChangeColor(priceChange: number): string {
-  if (priceChange >= 10) return "bg-green-700";
-  if (priceChange >= 7) return "bg-green-600";
-  if (priceChange >= 5) return "bg-green-500";
-  if (priceChange >= 3) return "bg-green-400";
-  if (priceChange >= 1) return "bg-green-300";
-  if (priceChange >= 0) return "bg-green-200";
-  if (priceChange >= -1) return "bg-red-200";
-  if (priceChange >= -3) return "bg-red-300";
-  if (priceChange >= -5) return "bg-red-400";
-  return "bg-red-500";
+  // Strong positive
+  if (priceChange >= 10) return "bg-emerald-600 text-white";
+  if (priceChange >= 7) return "bg-emerald-500 text-white";
+  if (priceChange >= 5) return "bg-emerald-400 text-gray-900";
+  // Moderate positive
+  if (priceChange >= 3) return "bg-teal-300 text-gray-900";
+  if (priceChange >= 1) return "bg-teal-200 text-gray-900";
+  // Slight positive
+  if (priceChange > 0) return "bg-teal-100 text-gray-900";
+  // Neutral
+  if (priceChange === 0) return "bg-gray-200 text-gray-900";
+  // Slight negative
+  if (priceChange > -1) return "bg-orange-100 text-gray-900";
+  if (priceChange > -3) return "bg-orange-200 text-gray-900";
+  // Moderate negative
+  if (priceChange > -5) return "bg-orange-300 text-gray-900";
+  // Strong negative
+  if (priceChange > -7) return "bg-red-400 text-gray-900";
+  return "bg-red-500 text-white";
 }
 
 export function formatCurrency(value: number): string {

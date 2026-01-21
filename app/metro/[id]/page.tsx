@@ -101,8 +101,8 @@ export default function MetroPage() {
             <div className="mb-6">
               <Text className="text-sm text-gray-600 mb-4">
                 Color indicates price change:
-                <span className="ml-2 text-green-700 font-semibold">Green = Increasing</span>
-                <span className="ml-2 text-red-700 font-semibold">Red = Decreasing</span>
+                <span className="ml-2 text-emerald-600 font-semibold">Teal/Green = Increasing</span>
+                <span className="ml-2 text-orange-600 font-semibold">Orange/Red = Decreasing</span>
               </Text>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
                 {submarkets.map((submarket) => (
@@ -112,13 +112,13 @@ export default function MetroPage() {
                       submarket.priceChange
                     )} p-3 rounded-lg border border-gray-300 shadow-sm`}
                   >
-                    <div className="text-xs font-semibold text-gray-900 truncate">
+                    <div className="text-xs font-semibold truncate">
                       {submarket.name}
                     </div>
-                    <div className="text-sm font-bold text-gray-900 mt-2">
+                    <div className="text-sm font-bold mt-2">
                       {formatPercent(submarket.priceChange)}
                     </div>
-                    <div className="text-xs text-gray-700 mt-1">
+                    <div className="text-xs opacity-75 mt-1">
                       {formatCurrency(submarket.medianPrice)}
                     </div>
                   </div>

@@ -1,11 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { Card, Title, Text, TabGroup, TabList, Tab, TabPanels, TabPanel } from "@tremor/react";
 import MetroHeatmap from "@/components/MetroHeatmap";
 import MetroTable from "@/components/MetroTable";
+import TimePeriodToggle from "@/components/TimePeriodToggle";
 import { getMetros, getLastUpdated } from "@/lib/data";
+import { TimePeriod } from "@/types";
 
 export default function Home() {
+  const [timePeriod, setTimePeriod] = useState<TimePeriod>("1Y");
   const metros = getMetros();
   const lastUpdated = new Date(getLastUpdated()).toLocaleDateString("en-US", {
     year: "numeric",
@@ -24,6 +28,14 @@ export default function Home() {
           </Text>
         </div>
 
+        {/* Time Period Selector */}
+        <Card>
+          <div className="space-y-2">
+            <Text className="font-semibold text-gray-700">Time Period</Text>
+            <TimePeriodToggle selected={timePeriod} onChange={setTimePeriod} />
+          </div>
+        </Card>
+
         {/* Main Content */}
         <Card>
           <TabGroup>
@@ -37,11 +49,11 @@ export default function Home() {
                   <div>
                     <Text className="text-sm text-gray-600 mb-4">
                       Color indicates price change:
-                      <span className="ml-2 text-green-700 font-semibold">Green = Increasing</span>
-                      <span className="ml-2 text-red-700 font-semibold">Red = Decreasing</span>
+                      <span className="ml-2 text-emerald-600 font-semibold">Teal/Green = Increasing</span>
+                      <span className="ml-2 text-orange-600 font-semibold">Orange/Red = Decreasing</span>
                     </Text>
                   </div>
-                  <MetroHeatmap metros={metros} />
+                  <MetroHeatmap metros={metros} timePeriod={timePeriod} />
                 </div>
               </TabPanel>
               <TabPanel>
