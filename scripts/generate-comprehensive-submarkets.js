@@ -7,18 +7,56 @@ const metrosPath = path.join(__dirname, '../data/metros.json');
 const submarkeetsPath = path.join(__dirname, '../data/submarkets.json');
 const metrosData = JSON.parse(fs.readFileSync(metrosPath, 'utf8'));
 
-// Generate time period data for submarkets (variation from metro)
+// Generate REALISTIC time period data for submarkets (variation from metro)
 function generateTimePeriods(metroChange) {
   // Submarkets vary from the metro average by -3% to +3%
   const variation = (Math.random() - 0.5) * 6;
-  const submarketChange = metroChange + variation;
+  const oneYear = metroChange + variation;
 
   // 3M is roughly 1/4 of annual
-  const threeMonth = submarketChange / 4 + (Math.random() - 0.5) * 0.5;
-  const oneYear = submarketChange;
-  const twoYear = submarketChange * (1.9 + Math.random() * 0.2);
-  const fiveYear = submarketChange * (4.2 + Math.random() * 0.8);
-  const tenYear = submarketChange * (7.5 + Math.random() * 1.5);
+  const threeMonth = oneYear / 4 + (Math.random() - 0.5) * 0.3;
+
+  // 2Y: Markets cycle - can't just double the pain or gain
+  let twoYear;
+  if (oneYear < 0) {
+    // Declining: recent decline, but longer-term less severe
+    twoYear = oneYear * 1.3 + (Math.random() - 0.3) * 2;
+  } else {
+    // Growing: 2Y is typically 1.6-2.0x the annual
+    twoYear = oneYear * (1.7 + Math.random() * 0.3);
+  }
+
+  // 5Y: Most markets appreciate 3-6% annually over long periods
+  let fiveYear;
+  if (oneYear < -3) {
+    // Strong recent decline: assume growth before, net positive
+    fiveYear = 10 + Math.random() * 15; // Up 10-25% over 5 years
+  } else if (oneYear < 0) {
+    // Mild decline: mixed years, slight positive or flat
+    fiveYear = 2 + Math.random() * 8; // Up 2-10% over 5 years
+  } else if (oneYear > 4) {
+    // Strong growth: been hot for a while
+    fiveYear = 20 + Math.random() * 20; // Up 20-40% over 5 years
+  } else {
+    // Normal growth
+    fiveYear = 10 + Math.random() * 15; // Up 10-25% over 5 years
+  }
+
+  // 10Y: Real estate almost always appreciates over 10 years
+  let tenYear;
+  if (oneYear < -5) {
+    // Very strong recent decline: still up long term
+    tenYear = 25 + Math.random() * 25; // Up 25-50% over 10 years
+  } else if (oneYear < 0) {
+    // Recent decline: definitely up long term
+    tenYear = 35 + Math.random() * 30; // Up 35-65% over 10 years
+  } else if (oneYear > 4) {
+    // Strong recent growth: been hot market
+    tenYear = 60 + Math.random() * 40; // Up 60-100% over 10 years
+  } else {
+    // Normal market
+    tenYear = 40 + Math.random() * 30; // Up 40-70% over 10 years
+  }
 
   return {
     "3M": parseFloat(threeMonth.toFixed(1)),
