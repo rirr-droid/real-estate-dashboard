@@ -126,7 +126,7 @@ export default function SubmarketPage() {
           </Card>
         </Grid>
 
-        {/* Redfin Listings Link */}
+        {/* Zillow Listings Link */}
         <Card className="shadow-xl border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
@@ -134,16 +134,16 @@ export default function SubmarketPage() {
                 View Active Listings
               </Title>
               <Text className="text-gray-700">
-                Browse current homes for sale in {submarket.name} on Redfin
+                Browse current homes for sale in {submarket.name} on Zillow
               </Text>
             </div>
             <a
-              href={submarket.redfinUrl}
+              href={submarket.listingsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-center whitespace-nowrap"
             >
-              View on Redfin →
+              View on Zillow →
             </a>
           </div>
         </Card>

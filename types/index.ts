@@ -32,7 +32,7 @@ export interface Submarket {
   daysOnMarket: number;
   rentalYield: number;
   strMetrics: STRMetrics;
-  redfinUrl: string;
+  listingsUrl: string;
 }
 
 export interface Metro {

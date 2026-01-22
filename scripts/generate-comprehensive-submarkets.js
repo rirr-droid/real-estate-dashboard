@@ -143,8 +143,8 @@ metrosData.metros.forEach(metro => {
       daysOnMarket: Math.round(metro.daysOnMarket * (0.85 + Math.random() * 0.3)),
       rentalYield: calculateRentalYield(medianPrice),
       strMetrics: generateSTRMetrics(medianPrice, metro.id),
-      // Redfin search URL - properly encoded search query format
-      redfinUrl: `https://www.redfin.com/${metro.state}/${metro.name.replace(/\s+/g, '-')}?searchQuery=${encodeURIComponent(name)}`
+      // Zillow neighborhood URL - more reliable for neighborhood searches
+      listingsUrl: `https://www.zillow.com/${metro.name.toLowerCase().replace(/\s+/g, '-')}-${metro.state.toLowerCase()}/${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}/`
     };
 
     allSubmarkets.push(submarket);
