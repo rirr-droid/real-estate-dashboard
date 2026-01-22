@@ -54,6 +54,12 @@ export default function Home() {
             >
               ⚖️ Compare Markets
             </Link>
+            <Link
+              href="/watchlist"
+              className="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg transition-colors"
+            >
+              ⭐ My Watchlist
+            </Link>
           </div>
         </div>
 

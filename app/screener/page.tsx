@@ -24,6 +24,9 @@ import {
   formatNumber,
   getBadgeColor,
 } from "@/lib/data";
+import { exportToCSV } from "@/lib/export";
+import { getMarketSignal, getSignalColor, getSignalLabel } from "@/lib/signals";
+import WatchlistButton from "@/components/WatchlistButton";
 
 export default function ScreenerPage() {
   const metros = getMetros();
@@ -262,10 +265,16 @@ export default function ScreenerPage() {
             </div>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-gray-200">
+          <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between">
             <Text className="text-gray-700 font-semibold">
               Showing {sortedMetros.length} of {metros.length} markets
             </Text>
+            <button
+              onClick={() => exportToCSV(sortedMetros, `market-screener-${new Date().toISOString().split('T')[0]}.csv`)}
+              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors"
+            >
+              📊 Export to CSV
+            </button>
           </div>
         </Card>
 
@@ -278,6 +287,7 @@ export default function ScreenerPage() {
               <TableHead>
                 <TableRow>
                   <TableHeaderCell className="text-gray-900 font-bold">Market</TableHeaderCell>
+                  <TableHeaderCell className="text-gray-900 font-bold">Signal</TableHeaderCell>
                   <TableHeaderCell className="text-gray-900 font-bold">Median Price</TableHeaderCell>
                   <TableHeaderCell className="text-gray-900 font-bold">$/Sqft</TableHeaderCell>
                   <TableHeaderCell className="text-gray-900 font-bold">1Y Change</TableHeaderCell>
@@ -286,46 +296,58 @@ export default function ScreenerPage() {
                   <TableHeaderCell className="text-gray-900 font-bold">STR RevPAR</TableHeaderCell>
                   <TableHeaderCell className="text-gray-900 font-bold">DOM</TableHeaderCell>
                   <TableHeaderCell className="text-gray-900 font-bold">Volume</TableHeaderCell>
+                  <TableHeaderCell className="text-gray-900 font-bold">Watch</TableHeaderCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {sortedMetros.map((metro) => (
-                  <TableRow key={metro.id} className="hover:bg-gray-50">
-                    <TableCell>
-                      <Link href={`/metro/${metro.id}`} className="font-bold text-blue-600 hover:text-blue-800 hover:underline">
-                        {metro.name}, {metro.state}
-                      </Link>
-                    </TableCell>
-                    <TableCell className="font-semibold text-gray-900">
-                      {formatCurrency(metro.medianPrice)}
-                    </TableCell>
-                    <TableCell className="text-gray-700 font-medium">
-                      ${metro.pricePerSqft}
-                    </TableCell>
-                    <TableCell>
-                      <Badge color={getBadgeColor(metro.priceChangeByPeriod["1Y"])}>
-                        {formatPercent(metro.priceChangeByPeriod["1Y"])}
-                      </Badge>
-                    </TableCell>
-                    <TableCell>
-                      <Badge color={getBadgeColor(metro.priceChangeByPeriod["5Y"] / 5)}>
-                        {formatPercent(metro.priceChangeByPeriod["5Y"])}
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="font-semibold text-purple-700">
-                      {metro.rentalYield.toFixed(2)}%
-                    </TableCell>
-                    <TableCell className="font-semibold text-green-700">
-                      ${metro.strMetrics.revPAR}
-                    </TableCell>
-                    <TableCell className="text-gray-700">
-                      {metro.daysOnMarket}
-                    </TableCell>
-                    <TableCell className="text-gray-700">
-                      {formatNumber(metro.volume)}
-                    </TableCell>
-                  </TableRow>
-                ))}
+                {sortedMetros.map((metro) => {
+                  const signal = getMarketSignal(metro);
+                  return (
+                    <TableRow key={metro.id} className="hover:bg-gray-50">
+                      <TableCell>
+                        <Link href={`/metro/${metro.id}`} className="font-bold text-blue-600 hover:text-blue-800 hover:underline">
+                          {metro.name}, {metro.state}
+                        </Link>
+                      </TableCell>
+                      <TableCell>
+                        <span className={`px-2 py-1 rounded-full text-xs font-bold ${getSignalColor(signal.signal)}`}>
+                          {getSignalLabel(signal.signal)}
+                        </span>
+                      </TableCell>
+                      <TableCell className="font-semibold text-gray-900">
+                        {formatCurrency(metro.medianPrice)}
+                      </TableCell>
+                      <TableCell className="text-gray-700 font-medium">
+                        ${metro.pricePerSqft}
+                      </TableCell>
+                      <TableCell>
+                        <Badge color={getBadgeColor(metro.priceChangeByPeriod["1Y"])}>
+                          {formatPercent(metro.priceChangeByPeriod["1Y"])}
+                        </Badge>
+                      </TableCell>
+                      <TableCell>
+                        <Badge color={getBadgeColor(metro.priceChangeByPeriod["5Y"] / 5)}>
+                          {formatPercent(metro.priceChangeByPeriod["5Y"])}
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="font-semibold text-purple-700">
+                        {metro.rentalYield.toFixed(2)}%
+                      </TableCell>
+                      <TableCell className="font-semibold text-green-700">
+                        ${metro.strMetrics.revPAR}
+                      </TableCell>
+                      <TableCell className="text-gray-700">
+                        {metro.daysOnMarket}
+                      </TableCell>
+                      <TableCell className="text-gray-700">
+                        {formatNumber(metro.volume)}
+                      </TableCell>
+                      <TableCell>
+                        <WatchlistButton metroId={metro.id} size="sm" />
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
               </TableBody>
             </Table>
           </div>

@@ -16,6 +16,8 @@ import {
   SelectItem,
 } from "@tremor/react";
 import { getMetros, formatCurrency, formatPercent, formatNumber } from "@/lib/data";
+import { exportToCSV } from "@/lib/export";
+import { Metro } from "@/types";
 
 export default function ComparePage() {
   const metros = getMetros();
@@ -109,10 +111,20 @@ export default function ComparePage() {
 
         {/* Comparison Table */}
         <Card className="shadow-xl border-gray-200">
-          <Title className="text-xl font-bold text-gray-900 mb-4">Comparison Results</Title>
-          <Text className="text-sm text-gray-600 mb-4">
-            ⭐ = Best in category
-          </Text>
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <Title className="text-xl font-bold text-gray-900">Comparison Results</Title>
+              <Text className="text-sm text-gray-600 mt-1">
+                ⭐ = Best in category
+              </Text>
+            </div>
+            <button
+              onClick={() => exportToCSV(selectedMetros.filter(Boolean) as Metro[], `market-comparison-${new Date().toISOString().split('T')[0]}.csv`)}
+              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors"
+            >
+              📊 Export to CSV
+            </button>
+          </div>
 
           <div className="overflow-x-auto">
             <Table>
