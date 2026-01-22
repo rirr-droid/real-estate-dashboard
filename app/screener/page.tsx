@@ -6,23 +6,12 @@ import {
   Card,
   Title,
   Text,
-  Table,
-  TableHead,
-  TableRow,
-  TableHeaderCell,
-  TableBody,
-  TableCell,
-  Badge,
-  Select,
-  SelectItem,
-  NumberInput,
 } from "@tremor/react";
 import {
   getMetros,
   formatCurrency,
   formatPercent,
   formatNumber,
-  getBadgeColor,
 } from "@/lib/data";
 import { exportToCSV } from "@/lib/export";
 import { getMarketSignal, getSignalColor, getSignalLabel } from "@/lib/signals";
@@ -32,24 +21,33 @@ export default function ScreenerPage() {
   const metros = getMetros();
 
   // Filter state
-  const [priceMin, setPriceMin] = useState<number>(0);
-  const [priceMax, setPriceMax] = useState<number>(10000000);
-  const [yieldMin, setYieldMin] = useState<number>(0);
-  const [yieldMax, setYieldMax] = useState<number>(100);
-  const [changeMin, setChangeMin] = useState<number>(-100);
-  const [changeMax, setChangeMax] = useState<number>(100);
-  const [revPARMin, setRevPARMin] = useState<number>(0);
-  const [daysOnMarketMax, setDaysOnMarketMax] = useState<number>(365);
+  const [priceMin, setPriceMin] = useState<string>("");
+  const [priceMax, setPriceMax] = useState<string>("");
+  const [yieldMin, setYieldMin] = useState<string>("");
+  const [yieldMax, setYieldMax] = useState<string>("");
+  const [changeMin, setChangeMin] = useState<string>("");
+  const [changeMax, setChangeMax] = useState<string>("");
+  const [revPARMin, setRevPARMin] = useState<string>("");
+  const [daysOnMarketMax, setDaysOnMarketMax] = useState<string>("");
   const [sortBy, setSortBy] = useState<string>("1Y");
 
   // Apply filters
   const filteredMetros = useMemo(() => {
     return metros.filter((metro) => {
-      if (metro.medianPrice < priceMin || metro.medianPrice > priceMax) return false;
-      if (metro.rentalYield < yieldMin || metro.rentalYield > yieldMax) return false;
-      if (metro.priceChangeByPeriod["1Y"] < changeMin || metro.priceChangeByPeriod["1Y"] > changeMax) return false;
-      if (metro.strMetrics.revPAR < revPARMin) return false;
-      if (metro.daysOnMarket > daysOnMarketMax) return false;
+      const priceMinNum = priceMin ? parseFloat(priceMin) : 0;
+      const priceMaxNum = priceMax ? parseFloat(priceMax) : Infinity;
+      const yieldMinNum = yieldMin ? parseFloat(yieldMin) : 0;
+      const yieldMaxNum = yieldMax ? parseFloat(yieldMax) : Infinity;
+      const changeMinNum = changeMin ? parseFloat(changeMin) : -Infinity;
+      const changeMaxNum = changeMax ? parseFloat(changeMax) : Infinity;
+      const revPARMinNum = revPARMin ? parseFloat(revPARMin) : 0;
+      const daysMaxNum = daysOnMarketMax ? parseFloat(daysOnMarketMax) : Infinity;
+
+      if (metro.medianPrice < priceMinNum || metro.medianPrice > priceMaxNum) return false;
+      if (metro.rentalYield < yieldMinNum || metro.rentalYield > yieldMaxNum) return false;
+      if (metro.priceChangeByPeriod["1Y"] < changeMinNum || metro.priceChangeByPeriod["1Y"] > changeMaxNum) return false;
+      if (metro.strMetrics.revPAR < revPARMinNum) return false;
+      if (metro.daysOnMarket > daysMaxNum) return false;
       return true;
     });
   }, [metros, priceMin, priceMax, yieldMin, yieldMax, changeMin, changeMax, revPARMin, daysOnMarketMax]);
@@ -75,189 +73,202 @@ export default function ScreenerPage() {
     }
   }, [filteredMetros, sortBy]);
 
+  const applyPreset = (preset: string) => {
+    switch (preset) {
+      case "highYield":
+        setYieldMin("10");
+        setChangeMin("0");
+        setSortBy("yield");
+        break;
+      case "hotGrowth":
+        setChangeMin("3");
+        setDaysOnMarketMax("35");
+        setSortBy("1Y");
+        break;
+      case "bestSTR":
+        setRevPARMin("120");
+        setSortBy("revPAR");
+        break;
+      case "affordable":
+        setPriceMax("400000");
+        setYieldMin("8");
+        setSortBy("yield");
+        break;
+    }
+  };
+
+  const resetAll = () => {
+    setPriceMin("");
+    setPriceMax("");
+    setYieldMin("");
+    setYieldMax("");
+    setChangeMin("");
+    setChangeMax("");
+    setRevPARMin("");
+    setDaysOnMarketMax("");
+    setSortBy("1Y");
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-[1800px] mx-auto p-6 space-y-6">
         {/* Header */}
         <div>
-          <Link href="/" className="text-blue-600 hover:text-blue-800 font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+          <Link href="/" className="text-blue-600 hover:text-blue-800 font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
             ← Back to Dashboard
           </Link>
           <Title className="text-4xl font-black text-gray-900 mt-4">
             Advanced Market Screener
           </Title>
-          <Text className="text-gray-600 mt-2">
+          <Text className="text-gray-700 mt-2 font-medium">
             Filter and compare markets by multiple criteria
           </Text>
         </div>
 
         {/* Filters */}
-        <Card className="shadow-xl border-gray-200">
-          <Title className="text-xl font-bold text-gray-900 mb-4">Screening Filters</Title>
+        <Card className="shadow-xl border-2 border-gray-300">
+          <Title className="text-2xl font-black text-gray-900 mb-6">Screening Filters</Title>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {/* Price Range */}
             <div>
-              <Text className="font-semibold text-gray-900 mb-2">Median Price Range</Text>
+              <label className="block text-sm font-bold text-gray-900 mb-2">Median Price Range</label>
               <div className="space-y-2">
-                <NumberInput
-                  placeholder="Min Price"
+                <input
+                  type="number"
+                  placeholder="Min Price (e.g. 300000)"
                   value={priceMin}
-                  onValueChange={(val) => setPriceMin(val || 0)}
-                  min={0}
-                  step={50000}
+                  onChange={(e) => setPriceMin(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                 />
-                <NumberInput
-                  placeholder="Max Price"
+                <input
+                  type="number"
+                  placeholder="Max Price (e.g. 800000)"
                   value={priceMax}
-                  onValueChange={(val) => setPriceMax(val || 10000000)}
-                  min={0}
-                  step={50000}
+                  onChange={(e) => setPriceMax(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                 />
               </div>
             </div>
 
             {/* Rental Yield */}
             <div>
-              <Text className="font-semibold text-gray-900 mb-2">Rental Yield %</Text>
+              <label className="block text-sm font-bold text-gray-900 mb-2">Rental Yield %</label>
               <div className="space-y-2">
-                <NumberInput
-                  placeholder="Min Yield"
+                <input
+                  type="number"
+                  placeholder="Min Yield (e.g. 8)"
                   value={yieldMin}
-                  onValueChange={(val) => setYieldMin(val || 0)}
-                  min={0}
-                  max={100}
-                  step={0.5}
+                  onChange={(e) => setYieldMin(e.target.value)}
+                  step="0.5"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                 />
-                <NumberInput
-                  placeholder="Max Yield"
+                <input
+                  type="number"
+                  placeholder="Max Yield (e.g. 20)"
                   value={yieldMax}
-                  onValueChange={(val) => setYieldMax(val || 100)}
-                  min={0}
-                  max={100}
-                  step={0.5}
+                  onChange={(e) => setYieldMax(e.target.value)}
+                  step="0.5"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                 />
               </div>
             </div>
 
             {/* Price Change */}
             <div>
-              <Text className="font-semibold text-gray-900 mb-2">1Y Price Change %</Text>
+              <label className="block text-sm font-bold text-gray-900 mb-2">1Y Price Change %</label>
               <div className="space-y-2">
-                <NumberInput
-                  placeholder="Min Change"
+                <input
+                  type="number"
+                  placeholder="Min Change (e.g. -5)"
                   value={changeMin}
-                  onValueChange={(val) => setChangeMin(val || -100)}
-                  min={-100}
-                  max={100}
-                  step={1}
+                  onChange={(e) => setChangeMin(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                 />
-                <NumberInput
-                  placeholder="Max Change"
+                <input
+                  type="number"
+                  placeholder="Max Change (e.g. 10)"
                   value={changeMax}
-                  onValueChange={(val) => setChangeMax(val || 100)}
-                  min={-100}
-                  max={100}
-                  step={1}
+                  onChange={(e) => setChangeMax(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                 />
               </div>
             </div>
 
             {/* STR RevPAR */}
             <div>
-              <Text className="font-semibold text-gray-900 mb-2">Min STR RevPAR</Text>
-              <NumberInput
-                placeholder="Min RevPAR"
+              <label className="block text-sm font-bold text-gray-900 mb-2">Min STR RevPAR</label>
+              <input
+                type="number"
+                placeholder="Min RevPAR (e.g. 100)"
                 value={revPARMin}
-                onValueChange={(val) => setRevPARMin(val || 0)}
-                min={0}
-                step={10}
+                onChange={(e) => setRevPARMin(e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
               />
-              <Text className="text-xs text-gray-600 mt-1">Revenue per available room/day</Text>
+              <p className="text-xs text-gray-600 mt-2 font-medium">Revenue per available room/day</p>
             </div>
 
             {/* Days on Market */}
             <div>
-              <Text className="font-semibold text-gray-900 mb-2">Max Days on Market</Text>
-              <NumberInput
-                placeholder="Max DOM"
+              <label className="block text-sm font-bold text-gray-900 mb-2">Max Days on Market</label>
+              <input
+                type="number"
+                placeholder="Max DOM (e.g. 40)"
                 value={daysOnMarketMax}
-                onValueChange={(val) => setDaysOnMarketMax(val || 365)}
-                min={0}
-                max={365}
-                step={5}
+                onChange={(e) => setDaysOnMarketMax(e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
               />
-              <Text className="text-xs text-gray-600 mt-1">Fast-moving markets only</Text>
+              <p className="text-xs text-gray-600 mt-2 font-medium">Fast-moving markets only</p>
             </div>
 
             {/* Sort By */}
             <div>
-              <Text className="font-semibold text-gray-900 mb-2">Sort By</Text>
-              <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectItem value="1Y">1Y Price Change</SelectItem>
-                <SelectItem value="5Y">5Y Price Change</SelectItem>
-                <SelectItem value="yield">Rental Yield</SelectItem>
-                <SelectItem value="revPAR">STR RevPAR</SelectItem>
-                <SelectItem value="price">Price (Low to High)</SelectItem>
-                <SelectItem value="pricePerSqft">Price/Sqft</SelectItem>
-              </Select>
+              <label className="block text-sm font-bold text-gray-900 mb-2">Sort By</label>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all bg-white"
+              >
+                <option value="1Y">1Y Price Change</option>
+                <option value="5Y">5Y Price Change</option>
+                <option value="yield">Rental Yield</option>
+                <option value="revPAR">STR RevPAR</option>
+                <option value="price">Price (Low to High)</option>
+                <option value="pricePerSqft">Price/Sqft</option>
+              </select>
             </div>
 
-            {/* Quick Presets */}
-            <div className="md:col-span-2">
-              <Text className="font-semibold text-gray-900 mb-2">Quick Presets</Text>
-              <div className="flex flex-wrap gap-2">
+            {/* Quick Presets - Full Width */}
+            <div className="md:col-span-2 lg:col-span-3 xl:col-span-4">
+              <label className="block text-sm font-bold text-gray-900 mb-3">Quick Presets</label>
+              <div className="flex flex-wrap gap-3">
                 <button
-                  onClick={() => {
-                    setYieldMin(10);
-                    setChangeMin(0);
-                    setSortBy("yield");
-                  }}
-                  className="px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-900 rounded-lg text-sm font-medium transition"
+                  onClick={() => applyPreset("highYield")}
+                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold transition-all shadow-md hover:shadow-lg"
                 >
                   High Yield Markets
                 </button>
                 <button
-                  onClick={() => {
-                    setChangeMin(3);
-                    setDaysOnMarketMax(35);
-                    setSortBy("1Y");
-                  }}
-                  className="px-4 py-2 bg-green-100 hover:bg-green-200 text-green-900 rounded-lg text-sm font-medium transition"
+                  onClick={() => applyPreset("hotGrowth")}
+                  className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-bold transition-all shadow-md hover:shadow-lg"
                 >
                   Hot Growth Markets
                 </button>
                 <button
-                  onClick={() => {
-                    setRevPARMin(120);
-                    setSortBy("revPAR");
-                  }}
-                  className="px-4 py-2 bg-purple-100 hover:bg-purple-200 text-purple-900 rounded-lg text-sm font-medium transition"
+                  onClick={() => applyPreset("bestSTR")}
+                  className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold transition-all shadow-md hover:shadow-lg"
                 >
                   Best STR Markets
                 </button>
                 <button
-                  onClick={() => {
-                    setPriceMax(400000);
-                    setYieldMin(8);
-                    setSortBy("yield");
-                  }}
-                  className="px-4 py-2 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-lg text-sm font-medium transition"
+                  onClick={() => applyPreset("affordable")}
+                  className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-bold transition-all shadow-md hover:shadow-lg"
                 >
                   Affordable High Yield
                 </button>
                 <button
-                  onClick={() => {
-                    setPriceMin(0);
-                    setPriceMax(10000000);
-                    setYieldMin(0);
-                    setYieldMax(100);
-                    setChangeMin(-100);
-                    setChangeMax(100);
-                    setRevPARMin(0);
-                    setDaysOnMarketMax(365);
-                  }}
-                  className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-900 rounded-lg text-sm font-medium transition"
+                  onClick={resetAll}
+                  className="px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white rounded-lg font-bold transition-all shadow-md hover:shadow-lg"
                 >
                   Reset All
                 </button>
@@ -265,13 +276,15 @@ export default function ScreenerPage() {
             </div>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between">
-            <Text className="text-gray-700 font-semibold">
-              Showing {sortedMetros.length} of {metros.length} markets
-            </Text>
+          <div className="mt-6 pt-6 border-t-2 border-gray-200 flex items-center justify-between">
+            <div>
+              <p className="text-lg font-black text-gray-900">
+                Showing <span className="text-blue-600">{sortedMetros.length}</span> of {metros.length} markets
+              </p>
+            </div>
             <button
               onClick={() => exportToCSV(sortedMetros, `market-screener-${new Date().toISOString().split('T')[0]}.csv`)}
-              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors"
+              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-all shadow-md hover:shadow-lg"
             >
               📊 Export to CSV
             </button>
@@ -279,84 +292,100 @@ export default function ScreenerPage() {
         </Card>
 
         {/* Results Table */}
-        <Card className="shadow-xl border-gray-200">
-          <Title className="text-xl font-bold text-gray-900 mb-4">Screener Results</Title>
+        <Card className="shadow-xl border-2 border-gray-300">
+          <Title className="text-2xl font-black text-gray-900 mb-6">Screener Results</Title>
 
           <div className="overflow-x-auto">
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableHeaderCell className="text-gray-900 font-bold">Market</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">Signal</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">Median Price</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">$/Sqft</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">1Y Change</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">5Y Change</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">Yield %</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">STR RevPAR</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">DOM</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">Volume</TableHeaderCell>
-                  <TableHeaderCell className="text-gray-900 font-bold">Watch</TableHeaderCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
+            <table className="w-full">
+              <thead>
+                <tr className="border-b-2 border-gray-300 bg-gray-100">
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">Market</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">Signal</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">Median Price</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">$/Sqft</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">1Y Change</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">5Y Change</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">Yield %</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">STR RevPAR</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">DOM</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">Volume</th>
+                  <th className="text-left py-4 px-4 text-sm font-black text-gray-900">Watch</th>
+                </tr>
+              </thead>
+              <tbody>
                 {sortedMetros.map((metro) => {
                   const signal = getMarketSignal(metro);
+                  const change1Y = metro.priceChangeByPeriod["1Y"];
+                  const change5Y = metro.priceChangeByPeriod["5Y"];
+
                   return (
-                    <TableRow key={metro.id} className="hover:bg-gray-50">
-                      <TableCell>
-                        <Link href={`/metro/${metro.id}`} className="font-bold text-blue-600 hover:text-blue-800 hover:underline">
+                    <tr key={metro.id} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                      <td className="py-4 px-4">
+                        <Link href={`/metro/${metro.id}`} className="font-bold text-blue-600 hover:text-blue-800 hover:underline text-base">
                           {metro.name}, {metro.state}
                         </Link>
-                      </TableCell>
-                      <TableCell>
-                        <span className={`px-2 py-1 rounded-full text-xs font-bold ${getSignalColor(signal.signal)}`}>
+                      </td>
+                      <td className="py-4 px-4">
+                        <span className={`px-3 py-1.5 rounded-full text-xs font-black ${getSignalColor(signal.signal)}`}>
                           {getSignalLabel(signal.signal)}
                         </span>
-                      </TableCell>
-                      <TableCell className="font-semibold text-gray-900">
+                      </td>
+                      <td className="py-4 px-4 font-bold text-gray-900 text-base">
                         {formatCurrency(metro.medianPrice)}
-                      </TableCell>
-                      <TableCell className="text-gray-700 font-medium">
+                      </td>
+                      <td className="py-4 px-4 font-bold text-gray-700 text-base">
                         ${metro.pricePerSqft}
-                      </TableCell>
-                      <TableCell>
-                        <Badge color={getBadgeColor(metro.priceChangeByPeriod["1Y"])}>
-                          {formatPercent(metro.priceChangeByPeriod["1Y"])}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        <Badge color={getBadgeColor(metro.priceChangeByPeriod["5Y"] / 5)}>
-                          {formatPercent(metro.priceChangeByPeriod["5Y"])}
-                        </Badge>
-                      </TableCell>
-                      <TableCell className="font-semibold text-purple-700">
+                      </td>
+                      <td className="py-4 px-4">
+                        <span className={`px-3 py-1.5 rounded-lg text-sm font-bold ${
+                          change1Y >= 4 ? 'bg-green-600 text-white' :
+                          change1Y >= 0 ? 'bg-green-400 text-white' :
+                          change1Y >= -3 ? 'bg-orange-500 text-white' :
+                          'bg-red-600 text-white'
+                        }`}>
+                          {formatPercent(change1Y)}
+                        </span>
+                      </td>
+                      <td className="py-4 px-4">
+                        <span className={`px-3 py-1.5 rounded-lg text-sm font-bold ${
+                          change5Y >= 25 ? 'bg-green-600 text-white' :
+                          change5Y >= 15 ? 'bg-green-400 text-white' :
+                          change5Y >= 5 ? 'bg-yellow-500 text-gray-900' :
+                          'bg-gray-400 text-white'
+                        }`}>
+                          {formatPercent(change5Y)}
+                        </span>
+                      </td>
+                      <td className="py-4 px-4 font-bold text-purple-700 text-base">
                         {metro.rentalYield.toFixed(2)}%
-                      </TableCell>
-                      <TableCell className="font-semibold text-green-700">
+                      </td>
+                      <td className="py-4 px-4 font-bold text-green-700 text-base">
                         ${metro.strMetrics.revPAR}
-                      </TableCell>
-                      <TableCell className="text-gray-700">
+                      </td>
+                      <td className="py-4 px-4 font-semibold text-gray-900 text-base">
                         {metro.daysOnMarket}
-                      </TableCell>
-                      <TableCell className="text-gray-700">
+                      </td>
+                      <td className="py-4 px-4 font-semibold text-gray-900 text-base">
                         {formatNumber(metro.volume)}
-                      </TableCell>
-                      <TableCell>
+                      </td>
+                      <td className="py-4 px-4">
                         <WatchlistButton metroId={metro.id} size="sm" />
-                      </TableCell>
-                    </TableRow>
+                      </td>
+                    </tr>
                   );
                 })}
-              </TableBody>
-            </Table>
+              </tbody>
+            </table>
           </div>
 
           {sortedMetros.length === 0 && (
-            <div className="text-center py-12">
-              <Text className="text-gray-600 text-lg">
-                No markets match your criteria. Try adjusting your filters.
-              </Text>
+            <div className="text-center py-16 bg-gray-50 rounded-lg">
+              <p className="text-gray-900 text-xl font-bold mb-2">
+                No markets match your criteria
+              </p>
+              <p className="text-gray-600 font-medium">
+                Try adjusting your filters or using a preset
+              </p>
             </div>
           )}
         </Card>
