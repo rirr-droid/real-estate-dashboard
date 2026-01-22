@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, Title, Text, TabGroup, TabList, Tab, TabPanels, TabPanel, Select, SelectItem } from "@tremor/react";
 import MetroHeatmap from "@/components/MetroHeatmap";
 import STRHeatmap from "@/components/STRHeatmap";
@@ -13,6 +14,7 @@ import { TimePeriod } from "@/types";
 export default function Home() {
   const [timePeriod, setTimePeriod] = useState<TimePeriod>("1Y");
   const [strSortBy, setSTRSortBy] = useState<"revPAR" | "occupancy" | "adr">("revPAR");
+  const [heatmapMetric, setHeatmapMetric] = useState<string>("priceChange");
   const metros = getMetros();
   const lastUpdated = new Date(getLastUpdated()).toLocaleDateString("en-US", {
     year: "numeric",
@@ -31,6 +33,28 @@ export default function Home() {
           <Text className="text-gray-600 text-lg">
             {metros.length} US Metro Markets • Updated {lastUpdated}
           </Text>
+
+          {/* Quick Navigation */}
+          <div className="flex justify-center gap-3 mt-4 flex-wrap">
+            <Link
+              href="/screener"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors"
+            >
+              🔍 Advanced Screener
+            </Link>
+            <Link
+              href="/map"
+              className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors"
+            >
+              📊 Bubble Chart
+            </Link>
+            <Link
+              href="/compare"
+              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors"
+            >
+              ⚖️ Compare Markets
+            </Link>
+          </div>
         </div>
 
         {/* Key Insights */}
@@ -59,26 +83,35 @@ export default function Home() {
               {/* Market Heatmap Tab */}
               <TabPanel>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <Text className="text-gray-600">
-                      Click any market to explore submarkets and detailed metrics
-                    </Text>
+                  <div className="flex items-center justify-between flex-wrap gap-4">
+                    <div className="flex items-center gap-4">
+                      <Text className="text-gray-700 font-semibold">View By:</Text>
+                      <Select value={heatmapMetric} onValueChange={setHeatmapMetric} className="w-48">
+                        <SelectItem value="priceChange">Price Change</SelectItem>
+                        <SelectItem value="yield">Rental Yield</SelectItem>
+                        <SelectItem value="revPAR">STR RevPAR</SelectItem>
+                        <SelectItem value="price">Median Price</SelectItem>
+                      </Select>
+                    </div>
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 bg-green-300 rounded"></div>
-                        <span className="text-gray-700">Strong Growth</span>
+                        <span className="text-gray-700">High</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 bg-gray-200 rounded"></div>
-                        <span className="text-gray-700">Neutral</span>
+                        <span className="text-gray-700">Average</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 bg-red-200 rounded"></div>
-                        <span className="text-gray-700">Declining</span>
+                        <span className="text-gray-700">Low</span>
                       </div>
                     </div>
                   </div>
-                  <MetroHeatmap metros={metros} timePeriod={timePeriod} />
+                  <Text className="text-gray-600 text-sm">
+                    Click any market to explore submarkets and detailed metrics
+                  </Text>
+                  <MetroHeatmap metros={metros} timePeriod={timePeriod} metric={heatmapMetric} />
                 </div>
               </TabPanel>
 
