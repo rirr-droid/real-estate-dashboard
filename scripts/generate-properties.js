@@ -147,7 +147,8 @@ function generateProperty(metro, index) {
 
     dealScore: 0, // Will be calculated by algorithm
 
-    listingUrl: `https://www.zillow.com/homedetails/${generateZipCode(metro.state)}/zpid_${Math.floor(Math.random() * 9000000) + 1000000}/`,
+    // Use Zillow search URL with property criteria - will show real listings matching these specs
+    listingUrl: `https://www.zillow.com/homes/${encodeURIComponent(metro.name + ', ' + metro.state)}_rb/?searchQueryState={"pagination":{},"mapBounds":{},"regionSelection":[{"regionType":6}],"isMapVisible":true,"filterState":{"price":{"min":${Math.max(0, price - 50000)},"max":${price + 50000}},"beds":{"min":${bedrooms}},"baths":{"min":${bathrooms}},"sqft":{"min":${Math.max(0, sqft - 200)},"max":${sqft + 200}}}}`,
     description: `Beautiful ${bedrooms} bed, ${bathrooms} bath ${propertyType} in ${metro.name}`,
 
     latitude: latBase,
@@ -161,7 +162,7 @@ function generateProperty(metro, index) {
 console.log('🏠 Generating property listings...\n');
 
 const allProperties = [];
-const propertiesPerMetro = 150; // Generate 150 properties per metro = 3,600 total
+const propertiesPerMetro = 2100; // Generate 2,100 properties per metro = 50,400 total
 
 metrosData.metros.forEach(metro => {
   for (let i = 0; i < propertiesPerMetro; i++) {

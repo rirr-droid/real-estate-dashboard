@@ -7,6 +7,7 @@ import { getTopDeals, formatPropertyType } from "@/lib/properties";
 import { calculateDealScore, getDealScoreColor, getDealRatingColor } from "@/lib/deal-scoring";
 import { PropertyType } from "@/types/property";
 import { formatCurrency } from "@/lib/data";
+import CityAutocomplete from "@/components/CityAutocomplete";
 
 export default function DealHunterPage() {
   const [searchCity, setSearchCity] = useState("");
@@ -84,9 +85,20 @@ export default function DealHunterPage() {
           <Title className="text-4xl font-black text-gray-900 mt-4">
             🎯 Deal Hunter
           </Title>
-          <Text className="text-gray-600 mt-2">
-            Find the best property deals across the US with our proprietary scoring algorithm
+          <Text className="text-gray-600 mt-2 text-lg">
+            Find the best property deals across 50,400+ listings nationwide with our proprietary scoring algorithm
           </Text>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
+              💡 Type "Sea" to see Seattle suggestions
+            </span>
+            <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
+              ✓ Real Zillow search links
+            </span>
+            <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold">
+              🎯 Scores ranked 1-10
+            </span>
+          </div>
         </div>
 
         {/* Search & Filters */}
@@ -97,17 +109,15 @@ export default function DealHunterPage() {
             {/* Location */}
             <div>
               <label className="block text-sm font-bold text-gray-900 mb-2">
-                Location (City or Metro)
+                📍 Location (City or Metro)
               </label>
-              <input
-                type="text"
-                placeholder="e.g., Seattle, Los Angeles, Miami"
+              <CityAutocomplete
                 value={searchCity}
-                onChange={(e) => setSearchCity(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-semibold text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                onChange={setSearchCity}
+                placeholder="Start typing... e.g., Sea (Seattle, WA)"
               />
               <Text className="text-gray-600 text-sm mt-1">
-                Leave blank to search all markets
+                Type any city name and select from suggestions • Leave blank to search all markets
               </Text>
             </div>
 
@@ -434,7 +444,7 @@ export default function DealHunterPage() {
                 <strong>Negotiation Intelligence:</strong> Get data-driven offer suggestions and negotiation strategies tailored to each property&apos;s unique situation.
               </p>
               <p>
-                <strong>Nationwide Coverage:</strong> Search across 3,600+ active listings in 24 major US metro areas with advanced filtering by price, property type, and more.
+                <strong>Nationwide Coverage:</strong> Search across 50,400+ properties in 24 major US metro areas with advanced filtering by price, property type, beds, baths, and deal score.
               </p>
             </div>
           </Card>
