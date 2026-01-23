@@ -37,6 +37,12 @@ export default function Home() {
           {/* Quick Navigation */}
           <div className="flex justify-center gap-3 mt-4 flex-wrap">
             <Link
+              href="/deal-hunter"
+              className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors"
+            >
+              🎯 Deal Hunter
+            </Link>
+            <Link
               href="/screener"
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors"
             >
